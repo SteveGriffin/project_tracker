@@ -30,6 +30,7 @@ gem 'pry'
 gem 'pry-rescue'
 
 gem 'minitest-rails'
+gem 'minitest-reporters'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

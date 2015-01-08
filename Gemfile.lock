@@ -27,6 +27,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
+    ansi (1.4.3)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
     coderay (1.1.0)
@@ -58,6 +59,11 @@ GEM
     minitest-rails (2.1.1)
       minitest (~> 5.4)
       railties (~> 4.1)
+    minitest-reporters (1.0.5)
+      ansi
+      builder
+      minitest (>= 5.0)
+      ruby-progressbar
     multi_json (1.10.1)
     polyglot (0.3.5)
     pry (0.10.1)
@@ -88,6 +94,7 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
+    ruby-progressbar (1.6.0)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -131,6 +138,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   minitest-rails
+  minitest-reporters
   pry
   pry-rescue
   rails (= 4.1.1)
