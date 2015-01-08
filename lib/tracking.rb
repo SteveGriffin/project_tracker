@@ -1,11 +1,11 @@
 class Tracking
 
-def self.time_difference
-	time = Time.now
-
+def self.time_difference(start_time, end_time)
+	@difference = start_time - end_time
+	
 end
 
-def get_time
+def self.get_time
 	Time.now
 end
 
