@@ -2,13 +2,13 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  email: MyString
-  password: MyString
+  name: testname
+  email: testd@tedst.com
+  password_digest: test
   admin: false
 
 two:
   name: MyString
   email: MyString
-  password: MyString
+  password_digest: MyString
   admin: false
