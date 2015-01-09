@@ -1,0 +1,14 @@
+# Read about fixtures at
+# http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  project_id: 1
+  start_time: 2015-01-09 15:11:23
+  end_time: 2015-01-09 15:11:23
+  task_id: 1
+
+two:
+  project_id: 1
+  start_time: 2015-01-09 15:11:23
+  end_time: 2015-01-09 15:11:23
+  task_id: 1

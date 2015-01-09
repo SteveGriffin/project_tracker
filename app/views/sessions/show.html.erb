@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @session.project_id %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @session.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @session.end_time %>
+</p>
+
+<p>
+  <strong>Task:</strong>
+  <%= @session.task_id %>
+</p>
+
+<%= link_to 'Edit', edit_session_path(@session) %> |
+<%= link_to 'Back', sessions_path %>
