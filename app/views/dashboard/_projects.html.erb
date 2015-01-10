@@ -4,5 +4,13 @@
 <% if @projects != nil %>
 	 <% @projects.each do |project| %>
 	 	<p><b>Project:</b> <%= project.name %>s</p>
-	 <% end %>
+	 	<br />
+	 	<h3>Tasks:</h3>
+
+	 	<% @tasks = get_tasks(project.id) %>
+
+	 	<% @tasks.each do |task| %>
+	 		<p>TASK ID: <%= task.id %></p>
+	 	<% end %>
+	 	<% end %>
 <% end %>

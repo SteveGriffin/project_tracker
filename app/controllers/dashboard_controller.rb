@@ -7,6 +7,12 @@ class DashboardController < ApplicationController
 	end
 
 
+	helper_method :get_tasks
+
+	def get_tasks(id)
+			@tasks = Task.where(:project_id => id)
+	end
+
 	private
 
 	def get_projects
@@ -16,5 +22,7 @@ class DashboardController < ApplicationController
 	def set_user
 		@user = User.find(params[:id])
 	end
+
+
 
 end
