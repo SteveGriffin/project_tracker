@@ -24,11 +24,15 @@ class TasksController < ApplicationController
   # POST /tasks
   # POST /tasks.json
   def create
+
+    # @task = Task.new(:user_id => session[:user_id], :project_id => params[:project_id])#, :description => params[:description] )
     @task = Task.new(task_params)
+
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
+        #redirect to dashboard
+        format.html { redirect_to controller: 'dashboard', action: 'show', id: session[:user_id] }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }
@@ -62,13 +66,13 @@ class TasksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_task
-      @task = Task.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_task
+    @task = Task.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def task_params
-      params.require(:task).permit(:project_id, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def task_params
+    params.require(:task).permit(:project_id, :user_id, :description)
+  end
 end

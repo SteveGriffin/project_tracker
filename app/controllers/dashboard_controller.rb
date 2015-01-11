@@ -6,6 +6,13 @@ class DashboardController < ApplicationController
 		binding.pry
 	end
 
+	def new_task
+		#session[:project_id] = params[:id]
+		session[:user_id] = @user.id
+		#redirect to new task page with project_id in params
+		redirect_to new_task_path( :project_id => params[:id])
+	end
+
 
 	helper_method :get_tasks
 

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :tasks
 
   get 'dashboard/:id' => 'dashboard#show'
+  get 'dashboard/:id/task' => 'dashboard#new_task'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

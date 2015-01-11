@@ -12,5 +12,6 @@
 	 	<% @tasks.each do |task| %>
 	 		<p>TASK ID: <%= task.id %></p>
 	 	<% end %>
+	 	<%= link_to "Start Task", controller: 'dashboard', action: 'new_task'%>
 	 	<% end %>
 <% end %>
