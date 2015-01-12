@@ -26,11 +26,11 @@ class SessionsController < ApplicationController
   def create
     @session = Session.new(session_params)
     @session.save
-    puts "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+
     if @session.save
       render plain: @session.inspect
     else
-      render plain: "fuck"
+      render plain: "record not saved"
     end
 
     # respond_to do |format|
@@ -44,11 +44,6 @@ class SessionsController < ApplicationController
     # end
   end
 
-  # def start_session
-  #   @session = Session.new(project_id: params[:project_id], start_time: Time.now)
-  #   @session.save
-  #   render plain: "AAAAAAAA" #@session.inspect
-  # end
 
   # PATCH/PUT /sessions/1
   # PATCH/PUT /sessions/1.json
