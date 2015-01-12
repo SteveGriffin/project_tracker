@@ -12,7 +12,7 @@
 	 	<% @tasks.each do |task| %>
 	 		<p>TASK ID: <%= task.id %> <%= link_to "start session", sessions_path(:session => {project_id: params[:id], start_time: Time.now, task_id: task.id}), method: :post %></p>
 	 	<% end %>
-	 	<%= link_to "Start Task", controller: 'dashboard', action: 'new_task'%>
+	 	<%= link_to "Start Task", new_task_path(project_id: project.id)%>
 	 	<% end %>
 
 	 	<%= params.inspect %>
