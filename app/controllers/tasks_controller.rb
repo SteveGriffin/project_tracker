@@ -32,7 +32,8 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.save
         #redirect to dashboard
-        format.html { redirect_to controller: 'dashboard', action: 'show', id: session[:user_id] }
+        format.html { redirect_to @task, id: session[:user_id] }
+        #format.html { redirect_to controller: 'dashboard', action: 'show', id: session[:user_id] }
         format.json { render :show, status: :created, location: @task }
       else
         format.html { render :new }

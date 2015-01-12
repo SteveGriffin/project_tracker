@@ -3,7 +3,6 @@ class DashboardController < ApplicationController
 
 	#show.html.erb
 	def index	
-		binding.pry
 	end
 
 	def new_task

@@ -9,6 +9,11 @@ Rails.application.routes.draw do
 
   get 'dashboard/:id' => 'dashboard#show'
   get 'dashboard/:id/task' => 'dashboard#new_task'
+
+  #get 'start_session' => 'sessions#start_session'
+  get '/create/:id' => 'sessions#create'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
