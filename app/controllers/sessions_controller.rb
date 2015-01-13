@@ -5,6 +5,16 @@ class SessionsController < ApplicationController
   # GET /sessions.json
   def index
     @sessions = Session.all
+
+    @sessions.each do |session|
+      if session.end_time == nil
+        session[:active_session] = true
+    end
+
+    if session[:active_session]
+      notice: "active session in progress"
+    end
+
   end
 
   # GET /sessions/1
