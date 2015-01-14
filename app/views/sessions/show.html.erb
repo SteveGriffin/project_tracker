@@ -2,7 +2,8 @@
 
 <p>
   <strong>Project:</strong>
-  <%= @session.project_id %>
+  <% @project = Project.find(@session.project_id) %>
+  <%= @project.name%>
 </p>
 
 <p>
@@ -15,10 +16,13 @@
   <%= @session.end_time %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Task:</strong>
   <%= @session.task_id %>
 </p>
-
-<%= link_to 'Edit', edit_session_path(@session) %> |
-<%= link_to 'Back', sessions_path %>
+ -->
+ <% if @session.end_time == nil %>
+	<%= link_to 'End Session', :controller => 'sessions', :action => 'stop_time', params => {:id => @session.id} %>
+<% end %>
+<%= link_to 'Edit', edit_session_path(@session) %> 
+<%= link_to 'Back', dashboard_path(session[:user_id]) %>

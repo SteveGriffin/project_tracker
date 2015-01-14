@@ -1,20 +1,22 @@
 class SessionsController < ApplicationController
+  #skip_before_action :index
   before_action :set_session, only: [:show, :edit, :update, :destroy]
 
   # GET /sessions
   # GET /sessions.json
   def index
     @sessions = Session.all
+    # @sessions.each do |session|
+    #   if session.end_time == nil
+    #     #session[:active_session] = true
+    #   end
 
-    @sessions.each do |session|
-      if session.end_time == nil
-        session[:active_session] = true
-    end
+    #   if session[:active_session]
+    #      #notice: "active session in progress"
+    #      #render plain: 'asdf'
+    #   end
 
-    if session[:active_session]
-      notice: "active session in progress"
-    end
-
+    # end
   end
 
   # GET /sessions/1
@@ -38,7 +40,8 @@ class SessionsController < ApplicationController
     @session.save
 
     if @session.save
-      render plain: @session.inspect
+      #render plain: @session.inspect
+      redirect_to session_path(@session.id)
     else
       render plain: "record not saved"
     end
@@ -69,17 +72,24 @@ class SessionsController < ApplicationController
     end
   end
 
-  # DELETE /sessions/1
-  # DELETE /sessions/1.json
-  def destroy
-    @session.destroy
-    respond_to do |format|
-      format.html { redirect_to sessions_url, notice: 'Session was successfully destroyed.' }
-      format.json { head :no_content }
+    # DELETE /sessions/1
+    # DELETE /sessions/1.json
+    def destroy
+      @session.destroy
+      respond_to do |format|
+        format.html { redirect_to sessions_url, notice: 'Session was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
-  end
 
-  private
+    def stop_time
+      @session = set_session
+      @session.end_time = Time.now
+      @session.save!
+      redirect_to session_path(stopped: true)
+    end
+
+    private
     # Use callbacks to share common setup or constraints between actions.
     def set_session
       @session = Session.find(params[:id])
@@ -89,4 +99,5 @@ class SessionsController < ApplicationController
     def session_params
       params.require(:session).permit(:project_id, :start_time, :end_time, :task_id)
     end
-end
+
+  end

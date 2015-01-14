@@ -7,11 +7,13 @@ Rails.application.routes.draw do
 
   resources :tasks
 
-  get 'dashboard/:id' => 'dashboard#show'
+  get 'dashboard/:id' => 'dashboard#show', as: 'dashboard'
   get 'dashboard/:id/task' => 'dashboard#new_task'
 
   #get 'start_session' => 'sessions#start_session'
   get '/create/:id' => 'sessions#create'
+
+  get 'sessions/:id/stop_time' => 'sessions#stop_time'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
