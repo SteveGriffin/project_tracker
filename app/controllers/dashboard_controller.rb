@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
-  before_action :get_projects, :set_user, :active_session
+  before_action :get_projects, :set_user #, :active_session
 
   #show.html.erb
   def index

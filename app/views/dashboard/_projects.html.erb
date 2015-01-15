@@ -11,7 +11,7 @@
 	 	<% if @tasks != nil %>
 	 	
 		 	<% @tasks.each do |task| %>
-		 		<p>TASK NAME: <%= task.description %> <%= link_to "start session", sessions_path(:session => {project_id: project.id, start_time: Time.now, task_id: task.id}), method: :post %></p>
+		 		<p>TASK NAME: <%= task.id %><%= task.description %> <%= link_to "start session", sessions_path(:session => {project_id: project.id, start_time: Time.now, task_id: task.id}), method: :post %></p>
 
 		 		<%= Task.total_time(task.id) %>
 	<!-- 	 		<% @sessions = Task.task_sessions(task.id) %>

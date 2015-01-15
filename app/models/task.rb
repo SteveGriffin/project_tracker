@@ -11,17 +11,27 @@ class Task < ActiveRecord::Base
 
     @task_sessions.each do |task|
       if task.start_time != nil && task.end_time != nil
-        time = (task.start_time - task.end_time) / 60
+        time = (task.end_time - task.start_time) / 60
         total += time
       end
     end
 
-    hours = total / 60
-    minutes = total % 60
+    #if less than an hours spent, pass back minutes and zero hours
+    if (total / 60) < 1
+      hours = 0
+      minutes = total
+    else
+      #divmod returns the quotient and the remainder to get the hours and minutes
+      hours, minutes= total.divmod(60)
+      #round the minutes
+      minutes = minutes.round
+    end
+
+    #create and return hash of hours and minutes
     result = Hash.new
     result[:hours] = hours
     result[:minutes] = minutes
-
+    #return result
     result
   end
 
@@ -36,8 +46,8 @@ class Task < ActiveRecord::Base
     @tasks = Task.where(:project_id => project_id)
   end
 
-   #check for active session
-  def active_session(project_id)
+  #check for active session
+  def self.active_session(project_id)
     @sessions = Session.where(project_id: project_id)
 
     @sessions.each do |session|
@@ -50,5 +60,5 @@ class Task < ActiveRecord::Base
       end
     end
   end
-  
+
 end
