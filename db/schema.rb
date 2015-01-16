@@ -11,8 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110204332) do
+ActiveRecord::Schema.define(version: 20150116172700) do
 
+  create_table "controllers", force: true do |t|
+    t.string   "dashboard"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "projects", force: true do |t|
     t.string   "name"
@@ -32,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150110204332) do
     t.integer  "task_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "active"
   end
 
   add_index "sessions", ["project_id"], name: "index_sessions_on_project_id"
