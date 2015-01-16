@@ -7,6 +7,7 @@
       <th>Start time</th>
       <th>End time</th>
       <th>Task</th>
+      <th>Active</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%= session.start_time %></td>
         <td><%= session.end_time %></td>
         <td><%= session.task_id %></td>
+        <td><%= session.active %></td>
         <td><%= link_to 'Show', session %></td>
         <td><%= link_to 'Edit', edit_session_path(session) %></td>
         <td><%= link_to 'Destroy', session, method: :delete, data: { confirm: 'Are you sure?' } %></td>

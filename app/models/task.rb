@@ -19,12 +19,13 @@ class Task < ActiveRecord::Base
     #if less than an hours spent, pass back minutes and zero hours
     if (total / 60) < 1
       hours = 0
-      minutes = total
+      #round up to closest minute
+      minutes = total.ceil
     else
       #divmod returns the quotient and the remainder to get the hours and minutes
       hours, minutes= total.divmod(60)
       #round the minutes
-      minutes = minutes.round
+      minutes = minutes.ceil
     end
 
     #create and return hash of hours and minutes
@@ -46,19 +47,5 @@ class Task < ActiveRecord::Base
     @tasks = Task.where(:project_id => project_id)
   end
 
-  #check for active session
-  def self.active_session(project_id)
-    @sessions = Session.where(project_id: project_id)
-
-    @sessions.each do |session|
-      if session.end_time == nil
-        session[:active_session] = true
-      end
-
-      if session[:active_session]
-        flash[:notice] = "active session in progress"
-      end
-    end
-  end
 
 end

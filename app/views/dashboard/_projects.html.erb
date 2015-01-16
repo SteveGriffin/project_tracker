@@ -2,34 +2,43 @@
 
 
 <% if @projects != nil %>
-	 <% @projects.each do |project| %>
+	<% @projects.each do |project| %>
 	 	<p><b>Project:</b> <%= project.name %>s</p>
 	 	<br />
 	 	<h3>Tasks:</h3>
 
 	 	<% @tasks = Task.get_project_tasks(project.id) %>
+	 	<% @active_session = Project.active_session(project.id) %>
+
 	 	<% if @tasks != nil %>
 	 	
 		 	<% @tasks.each do |task| %>
-		 		<p>TASK NAME: <%= task.id %><%= task.description %> <%= link_to "start session", sessions_path(:session => {project_id: project.id, start_time: Time.now, task_id: task.id}), method: :post %></p>
+		 		
+
+		 		<p>TASK NAME: <%= task.id %><%= task.description %> 
+
+		 		<% if @active_session.count < 1 %>
+		 		<%= link_to "start session", sessions_path(:session => {project_id: project.id, start_time: Time.now, task_id: task.id, active: :true}), method: :post %></p> 
+		 		<% end %>
+		 	
 
 		 		<% @time = Task.total_time(task.id) %>
 
-		 		Total Time: <%=  @time[:hours]  %> Hours <%= @time[:minutes]%> Minutes
+		 		Total Time: <%=  @time[:hours]  %> Hours <%= @time[:minutes] %> Minutes
+		 		<br />
+		 			 	
+		 			 	
+	 					<% if @active_session.count > 0 && @active_session[:task_id] == task.id %>
+	 					<b>Task is Active. </b> <%= link_to "Click here to stop time for active session.", :controller => 'sessions', :action => 'stop_time',:id => @active_session[:session_id] %> 
+	 					<% else %>
+	 						
+	 					<% end %>
 		 		
-	<!-- 	 		<% @sessions = Task.task_sessions(task.id) %>
-		 		<% if @sessions != nil%>
-		 			<% @sessions.each do |session|%>
-		 			<%= session.id %>
-
-		 		<% end %> -->
-		 		
-		 		<% end %>
-	 	<% end %>
+		 	<% end %>
 	 	<% end %>
 
-	 	<%= link_to "Start Task", new_task_path(project_id: project.id)%>
-	 	<% end %>
+	 	<%= link_to "Start Task", new_task_path(project_id: project.id) %>
+	<% end %>
 
 	 	<%= params.inspect %>
 <% end %>

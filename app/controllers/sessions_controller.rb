@@ -82,8 +82,9 @@ class SessionsController < ApplicationController
       end
     end
 
-    def stop_time
+    def stop_time(session_id = nil)
       @session = set_session
+      @session.active = :false
       @session.end_time = Time.now
       @session.save!
       redirect_to session_path(stopped: true)
@@ -97,7 +98,7 @@ class SessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def session_params
-      params.require(:session).permit(:project_id, :start_time, :end_time, :task_id)
+      params.require(:session).permit(:project_id, :start_time, :end_time, :task_id, :active)
     end
 
   end
