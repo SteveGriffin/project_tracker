@@ -20,4 +20,16 @@ class Project < ActiveRecord::Base
 
     result
   end
+
+  #return boolean indicating whether project has been completed
+  def self.complete?(project_id)
+  	@project = Project.find(project_id)
+  	completion_status = @project.completion_date
+  	if completion_status
+  		true
+  	else
+  		false
+  	end
+  end
+
 end

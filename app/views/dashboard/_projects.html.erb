@@ -1,9 +1,11 @@
 <h1>Your Projects</h1>
-
+<br />
 
 <% if @projects != nil %>
 	<% @projects.each do |project| %>
-	 	<p><b>Project:</b> <%= project.name %>s</p>
+	 	<h2> Project: <%= project.name %>s</h2>
+	 	<br />
+	 	<%= link_to "Start New Task", new_task_path(project_id: project.id) %>
 	 	<br />
 	 	<h3>Tasks:</h3>
 
@@ -35,9 +37,18 @@
 	 					<% end %>
 		 		
 		 	<% end %>
-	 	<% end %>
 
-	 	<%= link_to "Start Task", new_task_path(project_id: project.id) %>
+	 	<% end %>	
+
+	 				<br />
+	 			 	Project Status: <% @status = Project.complete?(project.id) %>
+						 	<% if @status == true %>
+						 		Project completed on: <%= project.completion_date %>
+						 	<% else %>
+						 	Project is active.  <%= link_to 'Click Here To End Project', project_path(id: project.id, project:{completion_date: Time.now}), method: :put %>
+						 	<% end %>
+						 	<br />
+						 	
 	<% end %>
 
 	 	<%= params.inspect %>
