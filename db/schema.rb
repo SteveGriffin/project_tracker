@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116172700) do
+ActiveRecord::Schema.define(version: 20150119161625) do
+
+  create_table "collaborators", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "collaborators", ["project_id"], name: "index_collaborators_on_project_id"
+  add_index "collaborators", ["user_id"], name: "index_collaborators_on_user_id"
 
   create_table "controllers", force: true do |t|
     t.string   "dashboard"

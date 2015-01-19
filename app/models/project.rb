@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
   has_many :tasks, dependent: :destroy
+  has_many :collaborators, dependent: :destroy
+  has_many :users, through: :collaborators
   has_many :sessions, through: :tasks, dependent: :destroy
   belongs_to :user
 

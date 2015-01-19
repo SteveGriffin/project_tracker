@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :collaborators
+
   resources :sessions
 
   resources :projects
