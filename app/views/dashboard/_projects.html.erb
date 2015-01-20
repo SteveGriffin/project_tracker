@@ -4,10 +4,15 @@
 	<% @projects.each do |project| %>
 	 	<h2> Project: <%= project.name %>s</h2>
 
-	 	<h3>Collaborators: </h3>
 	 	<% @collaborators = Project.collaborators(project.id) %>
-	 	<% @collaborators.each do |collaborator| %>
-	 	<%= collaborator.name %>
+	 	<% if @collaborators.count > 0 %>
+		 	<h3>Collaborators: </h3>
+		 	
+
+		 	<% @collaborators.each do |collaborator| %>
+
+		 	<p><%= collaborator.name %> <%= link_to "Remove Collaborator", :controller => 'projects', :action => 'remove_collaborator', :project_id => project.id, :user_id => collaborator.id %></p>
+		 	<% end %>
 	 	<% end %>
 	 	<br />
 	 	<br />

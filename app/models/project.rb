@@ -8,16 +8,16 @@ class Project < ActiveRecord::Base
   #get active session for project
   #returns a hash of session_id and task_id
   def self.active_session(project_id)
-  	@project = Project.find(project_id)
-  	@sessions = @project.sessions
+    @project = Project.find(project_id)
+    @sessions = @project.sessions
 
-  	result = Hash.new
+    result = Hash.new
     @sessions.each do |session|
-    	if session.active == true
-    		result[:session_id] = session.id
-    		result[:task_id] = session.task_id
-    	else    	
-    	end
+      if session.active == true
+        result[:session_id] = session.id
+        result[:task_id] = session.task_id
+      else
+      end
     end
 
     result
@@ -25,19 +25,24 @@ class Project < ActiveRecord::Base
 
   #return boolean indicating whether project has been completed
   def self.complete?(project_id)
-  	@project = Project.find(project_id)
-  	completion_status = @project.completion_date
-  	if completion_status
-  		true
-  	else
-  		false
-  	end
+    @project = Project.find(project_id)
+    completion_status = @project.completion_date
+    if completion_status
+      true
+    else
+      false
+    end
   end
 
   #return project collaborators
   def self.collaborators(project_id)
     @project = Project.find(project_id)
     @collaborators = @project.users
+  end
+
+  #return projects that a specific user collaborates on
+  def self.collaborations(user_id)
+    @collaborations = Collaborator.find(user_id: user_id)
   end
 
 end

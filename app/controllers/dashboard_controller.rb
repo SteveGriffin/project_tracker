@@ -25,6 +25,4 @@ class DashboardController < ApplicationController
     session[:user_id] = @user.id
   end
 
-
-
 end

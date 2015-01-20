@@ -51,6 +51,15 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def remove_collaborator
+    #binding.pry
+    #Project.remove_collaborator(project_id, user_id)
+
+     @collaboration = Collaborator.find_by(project_id: params[:project_id], user_id: params[:user_id])
+     @collaboration.destroy
+     redirect_to dashboard_path(session[:user_id])
+  end
+
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
@@ -62,13 +71,13 @@ class ProjectsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = Project.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_params
-      params.require(:project).permit(:name, :description, :completion_date, :user_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def project_params
+    params.require(:project).permit(:name, :description, :completion_date, :user_id, :project_id)
+  end
 end
