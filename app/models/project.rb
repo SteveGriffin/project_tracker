@@ -34,4 +34,10 @@ class Project < ActiveRecord::Base
   	end
   end
 
+  #return project collaborators
+  def self.collaborators(project_id)
+    @project = Project.find(project_id)
+    @collaborators = @project.users
+  end
+
 end

@@ -1,9 +1,15 @@
 <h1>Your Projects</h1>
-<br />
 
 <% if @projects != nil %>
 	<% @projects.each do |project| %>
 	 	<h2> Project: <%= project.name %>s</h2>
+
+	 	<h3>Collaborators: </h3>
+	 	<% @collaborators = Project.collaborators(project.id) %>
+	 	<% @collaborators.each do |collaborator| %>
+	 	<%= collaborator.name %>
+	 	<% end %>
+	 	<br />
 	 	<br />
 	 	<%= link_to "Start New Task", new_task_path(project_id: project.id) %>
 	 	<br />
