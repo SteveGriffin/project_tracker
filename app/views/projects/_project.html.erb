@@ -63,7 +63,10 @@
 		 	<% end %>
 
 	 	<% end %>	
+	 	<br />
+	 				<% @project_time = Project.total_time(project.id) %>
 
+		 		<b>Total Overall Time For Project: <%=  @project_time[:hours]  %> Hours <%= @project_time[:minutes] %> Minutes </b>
 	 		 				<br />
 	 			 	Project Status: <% @status = Project.complete?(project.id) %>
 						 	<% if @status == true %>
