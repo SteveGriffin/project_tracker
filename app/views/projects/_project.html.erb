@@ -19,17 +19,7 @@
   <strong>User:</strong>
   <%= project.user_id %>
 </p>
-
-<% @collaborators = Project.collaborators(project.id) %>
-	 	<% if @collaborators.count > 0 %>
-		 	<h3>Collaborators: </h3>
-		 	
-
-		 	<% @collaborators.each do |collaborator| %>
-
-		 	<p><%= collaborator.name %> <%= link_to "Remove Collaborator", :controller => 'projects', :action => 'remove_collaborator', :project_id => project.id, :user_id => collaborator.id %></p>
-		 	<% end %>
-	 	<% end %>
+	<%= render partial: 'projects/collaborator', locals: {project_id: project.id} %>
 
 	 	<h3>Tasks:</h3>
 

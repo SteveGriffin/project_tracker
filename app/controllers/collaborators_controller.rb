@@ -61,6 +61,31 @@ class CollaboratorsController < ApplicationController
     end
   end
 
+  #Add a collaborator by email
+  def add_collaborator
+    project_id = params[:project_id]
+    email = params[:user][:email]
+    @user = User.find_by(email: email)
+
+    #check if user is already a collaborator
+    @existing = Collaborator.find_by(user_id: @user.id, project_id: project_id)
+    if @existing != nil
+      redirect_to project_url(project_id), notice: "Collaborator is already a contributor to this project"
+    else
+      #add user as a collaborator
+      if @user != nil
+        @collaborator = Collaborator.new
+        @collaborator.project_id = project_id
+        @collaborator.user_id = @user.id
+        @collaborator.save
+        redirect_to project_url(project_id), notice: "Collaborator added to project."
+      else
+        #user not found, redirect
+        redirect_to project_url(project_id), notice: "User was not found.  Collaborators must have an account to be added to the project."
+      end
+    end
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_collaborator
