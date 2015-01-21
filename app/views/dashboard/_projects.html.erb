@@ -1,67 +1,8 @@
 <h1>Your Projects</h1>
-
 <% if @projects != nil %>
-	<% @projects.each do |project| %>
-	 	<h2> Project: <%= project.name %>s</h2>
-
-	 	<% @collaborators = Project.collaborators(project.id) %>
-	 	<% if @collaborators.count > 0 %>
-		 	<h3>Collaborators: </h3>
-		 	
-
-		 	<% @collaborators.each do |collaborator| %>
-
-		 	<p><%= collaborator.name %> <%= link_to "Remove Collaborator", :controller => 'projects', :action => 'remove_collaborator', :project_id => project.id, :user_id => collaborator.id %></p>
-		 	<% end %>
-	 	<% end %>
-	 	<br />
-	 	<br />
-	 	<%= link_to "Add A Collaborator", new_collaborator_path %><br />
-	 	<%= link_to "Start New Task", new_task_path(project_id: project.id) %>
-	 	<br />
-	 	<h3>Tasks:</h3>
-
-	 	<% @tasks = Task.get_project_tasks(project.id) %>
-	 	<% @active_session = Project.active_session(project.id) %>
-
-	 	<% if @tasks != nil %>
-	 	
-		 	<% @tasks.each do |task| %>
-		 		
-
-		 		<p>TASK NAME: <%= task.id %><%= task.description %> 
-
-		 		<% if @active_session.count < 1 %>
-		 		<%= link_to "start session", sessions_path(:session => {project_id: project.id, start_time: Time.now, task_id: task.id, active: :true}), method: :post %></p> 
-		 		<% end %>
-		 	
-
-		 		<% @time = Task.total_time(task.id) %>
-
-		 		Total Time: <%=  @time[:hours]  %> Hours <%= @time[:minutes] %> Minutes
-		 		<br />
-		 			 	
-		 			 	
-	 					<% if @active_session.count > 0 && @active_session[:task_id] == task.id %>
-	 					<b>Task is Active. </b> <%= link_to "Click here to stop time for active session.", :controller => 'sessions', :action => 'stop_time',:id => @active_session[:session_id] %> 
-	 					<% else %>
-	 						
-	 					<% end %>
-		 		
-		 	<% end %>
-
-	 	<% end %>	
-
-	 				<br />
-	 			 	Project Status: <% @status = Project.complete?(project.id) %>
-						 	<% if @status == true %>
-						 		Project completed on: <%= project.completion_date %>
-						 	<% else %>
-						 	Project is active.  <%= link_to 'Click Here To End Project', project_path(id: project.id, project:{completion_date: Time.now}), method: :put %>
-						 	<% end %>
-						 	<br />
-						 	
-	<% end %>
-
-	 	<%= params.inspect %>
+		<%= render partial: "projects/project", collection: @projects, as: :project %>
 <% end %>
+
+<%= params.inspect %> 
+
+
