@@ -78,8 +78,24 @@ class Project < ActiveRecord::Base
     result[:minutes] = minutes
     #return result
     result
+  end
 
+  #output project object as csv data
+  def self.csv(project)
+    @sessions = project.sessions
+    @total_time = self.total_time(project.id)
 
+    CSV.generate do |csv|
+      csv << column_names
+      csv << project.attributes.values_at(*column_names)
+      csv << ["Work Sessions"]
+      @sessions.each do |session|
+        csv << session.attributes.values_at("start_time", "end_time")
+      end
+
+      csv << ["Hours", "Minutes"]
+      csv << @total_time.values
+    end
   end
 
 end

@@ -28,11 +28,13 @@
 
 		 		<b>Total Overall Time For Project: <%=  @project_time[:hours]  %> Hours <%= @project_time[:minutes] %> Minutes </b>
 	 		 				<br />
+	 		 				<%= link_to "Export to CSV", project_path(project.id, format: :csv) %>
+	 		 				<br >
 	 			 	Project Status: <% @status = Project.complete?(project.id) %>
 						 	<% if @status == true %>
 						 		Project completed on: <%= project.completion_date %>
 						 	<% else %>
-						 	Project is active.  <%= link_to 'Click Here To End Project', project_path(id: project.id, project:{completion_date: Time.now}), method: :put %>
+						 	Project is active.  <%= link_to 'Click Here To End Project', redirect_to: project_path(id: project.id, project:{completion_date: Time.now}), method: :put %>
 						 	<% end %>
 						 	<br />
 

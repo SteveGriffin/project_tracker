@@ -10,6 +10,10 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.csv {render text: Project.csv(@project)}
+    end
   end
 
   # GET /projects/new
@@ -55,9 +59,9 @@ class ProjectsController < ApplicationController
     #binding.pry
     #Project.remove_collaborator(project_id, user_id)
 
-     @collaboration = Collaborator.find_by(project_id: params[:project_id], user_id: params[:user_id])
-     @collaboration.destroy
-     redirect_to dashboard_path(session[:user_id])
+    @collaboration = Collaborator.find_by(project_id: params[:project_id], user_id: params[:user_id])
+    @collaboration.destroy
+    redirect_to dashboard_path(session[:user_id])
   end
 
   # DELETE /projects/1
