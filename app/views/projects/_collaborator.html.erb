@@ -11,8 +11,8 @@
 	 	<% end %>
 	 	Add Collaborator:<br />
 	 	<%= form_tag("/add_collaborator", method: "get", id: project_id) do %>
-			<%= label_tag(:email, "email") %>
-			<%= email_field("user", "email") %>
+			<%= label_tag("email") %>
+			<%= email_field("email", "") %>
 			<%= hidden_field_tag(:project_id, project_id)%>
 			<%= submit_tag("Add") %>
 		<% end %>

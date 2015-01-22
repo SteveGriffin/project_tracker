@@ -12,20 +12,19 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :project_id %><br>
-    <%= f.number_field :project_id %>
+    <%= f.hidden_field "project_id", value: params[:project_id] %>
   </div>
   <div class="field">
     <%= f.label :start_time %><br>
-    <%= f.datetime_select :start_time %>
+    <%= f.datetime_select :start_time, ampm: true, default: Time.now %>
   </div>
   <div class="field">
     <%= f.label :end_time %><br>
-    <%= f.datetime_select :end_time %>
+    <%= f.datetime_select :end_time, ampm: true, default: Time.now %>
   </div>
   <div class="field">
-    <%= f.label :task_id %><br>
-    <%= f.number_field :task_id %>
+
+    <%= f.hidden_field "task_id", value: params[:task_id] %>
   </div>
   <div class="actions">
     <%= f.submit %>

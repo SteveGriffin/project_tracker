@@ -2,6 +2,7 @@
 
 	 	<% @tasks = Task.get_project_tasks(project_id) %>
 	 	<% @active_session = Project.active_session(project_id) %>
+	 	<%= link_to "Start New Task", new_task_path(project_id: project_id) %>
 
 	 	<% if @tasks != nil %>
 	 	
@@ -11,7 +12,8 @@
 		 		<p>TASK NAME: <%= task.id %><%= task.description %> 
 
 		 		<% if @active_session.count < 1 %>
-		 		<%= link_to "start session", sessions_path(:session => {project_id: project_id, start_time: Time.now, task_id: task.id, active: :true}), method: :post %>
+		 		<%= link_to "Start Session", sessions_path(:session => {project_id: project_id, start_time: Time.now, task_id: task.id, active: :true}), method: :post %>
+		 		<%= link_to "Create Manual Session", new_session_path(project_id: project_id, task_id: task.id) %>
 		 		<%= link_to 'Delete Task', task, method: :delete, data: { confirm: 'Are you sure?' }%></p> 
 		 		<% end %>
 		 	

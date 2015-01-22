@@ -49,11 +49,15 @@ class Project < ActiveRecord::Base
   def self.total_time(project_id)
     @project = Project.find(project_id)
     @sessions = @project.sessions
+
     total = 0
     @sessions.each do |session|
-      time = (session.end_time - session.start_time) / 60
-      total += time
+      if session.start_time != nil && session.end_time != nil
+        time = (session.end_time - session.start_time) / 60
+        total += time
+      end
     end
+
 
     #if less than an hours spent, pass back minutes and zero hours
     if (total / 60) < 1
