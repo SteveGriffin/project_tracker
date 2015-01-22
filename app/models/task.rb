@@ -1,5 +1,7 @@
 class Task < ActiveRecord::Base
   has_many :sessions, dependent: :destroy
+  belongs_to :project
+  has_one :user, through: :project
 
   #return the total amount of time spent on the task
   #returns a hash of hours and minutes

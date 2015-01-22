@@ -43,7 +43,8 @@ class SessionsController < ApplicationController
       #render plain: @session.inspect
       redirect_to session_path(@session.id)
     else
-      render plain: "record not saved"
+     redirect_to project_path(@session.project_id), notice: 'Session not saved.  Session time may overlap with another existing session in 
+     one of your projects.' 
     end
 
     # respond_to do |format|

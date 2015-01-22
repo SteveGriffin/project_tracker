@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
   has_many :sessions, through: :tasks, dependent: :destroy
   belongs_to :user
 
+
   #get active session for project
   #returns a hash of session_id and task_id
   def self.active_session(project_id)
