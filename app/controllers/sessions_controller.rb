@@ -84,6 +84,7 @@ class SessionsController < ApplicationController
     end
 
     def stop_time(session_id = nil)
+      binding.pry
       @session = set_session
       @session.active = :false
       @session.end_time = Time.now
