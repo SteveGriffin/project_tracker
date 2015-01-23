@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150119161625) do
+ActiveRecord::Schema.define(version: 20150123172721) do
 
   create_table "collaborators", force: true do |t|
     t.integer  "user_id"
@@ -48,10 +48,12 @@ ActiveRecord::Schema.define(version: 20150119161625) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "active"
+    t.integer  "user_id"
   end
 
   add_index "sessions", ["project_id"], name: "index_sessions_on_project_id"
   add_index "sessions", ["task_id"], name: "index_sessions_on_task_id"
+  add_index "sessions", ["user_id"], name: "index_sessions_on_user_id"
 
   create_table "tasks", force: true do |t|
     t.integer  "project_id"

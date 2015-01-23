@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
-
 <p>
   <strong>Start time:</strong>
   <%= @session.start_time %>
@@ -12,11 +10,6 @@
   <%= @session.end_time %>
 </p>
 
-<!-- <p>
-  <strong>Task:</strong>
-  <%= @session.task_id %>
-</p>
- -->
  <% if @session.end_time == nil %>
 	<%= link_to 'End Session', :controller => 'sessions', :action => 'stop_time', params => {:id => @session.id} %>
 <% end %>
