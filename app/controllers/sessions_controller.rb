@@ -36,6 +36,7 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
+    binding.pry
     @session = Session.new(session_params)
     @session.save
 
@@ -84,7 +85,6 @@ class SessionsController < ApplicationController
     end
 
     def stop_time(session_id = nil)
-      binding.pry
       @session = set_session
       @session.active = :false
       @session.end_time = Time.now
@@ -100,7 +100,7 @@ class SessionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def session_params
-      params.require(:session).permit(:project_id, :start_time, :end_time, :task_id, :active)
+      params.require(:session).permit(:project_id, :start_time, :end_time, :task_id, :active, :user_id)
     end
 
   end

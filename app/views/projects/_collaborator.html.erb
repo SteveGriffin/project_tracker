@@ -1,7 +1,8 @@
 
 <% @collaborators = Project.collaborators(project_id) %>
+<h3>Collaborators: </h3>
 	 	<% if @collaborators.count > 0 %>
-		 	<h3>Collaborators: </h3>
+		 	
 		 	
 
 		 	<% @collaborators.each do |collaborator| %>

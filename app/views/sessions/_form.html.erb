@@ -23,8 +23,10 @@
     <%= f.datetime_select :end_time, ampm: true, default: Time.now %>
   </div>
   <div class="field">
-
     <%= f.hidden_field "task_id", value: params[:task_id] %>
+  </div>
+  <div class="field">
+  <%= f.hidden_field "user_id", value: session[:user_id] %>
   </div>
   <div class="actions">
     <%= f.submit %>

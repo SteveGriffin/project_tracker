@@ -18,8 +18,8 @@
     <div class="field">
     <%= f.hidden_field :project_id, value: params[:project_id] %><br>
   </div>
-    <div class="field">
-    <%= f.hidden_field :user_id, value: session[:user_id] %>
+  <div class="field">
+    <%= f.hidden_field :user_id, value: "session[:user_id]" %>
   </div>
 
   <div class="actions">
