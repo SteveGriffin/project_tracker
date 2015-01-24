@@ -1,5 +1,14 @@
 <h1>New user</h1>
-
+<p id="notice"><%= flash[:notice] %></p>
 <%= render 'form' %>
 
 <%= link_to 'Back', users_path %>
+
+<% if current_user %>
+	"Welcome <%= current_user.name %>"
+	<%= link_to "Sign out", controller: 'authentication', action: :destroy  %>
+<% else %>
+	<%= link_to "Sign in with Github", "/auth/github" %>
+<% end %>
+
+<%= current_user.inspect %>

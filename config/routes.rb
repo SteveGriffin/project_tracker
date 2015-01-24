@@ -9,6 +9,10 @@ Rails.application.routes.draw do
 
   resources :tasks
 
+  root to: "users#new"
+  get "/auth/:provider/callback/" => "authentication#create"
+  get "/signout" => "authentication#destroy", :as => :signout
+
   get 'dashboard/:id' => 'dashboard#show', as: 'dashboard'
   get 'dashboard/:id/task' => 'dashboard#new_task'
 
