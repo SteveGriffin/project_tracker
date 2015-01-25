@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   root to: "users#new"
   get "/auth/:provider/callback/" => "authentication#create"
+  get "/auth/:provider/" => "authentication#create"
   get "/signout" => "authentication#destroy", :as => :signout
 
   get 'dashboard/:id' => 'dashboard#show', as: 'dashboard'

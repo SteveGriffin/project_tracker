@@ -13,8 +13,8 @@ class User < ActiveRecord::Base
   	#binding.pry
     create! do |user|
       user.provider = auth["provider"]
-      user.id = auth["uid"]
-      user.name = auth["info"]["nickname"]
+      user.uid = auth["uid"]
+      user.name = "TestUser" #auth["info"]["nickname"]
       user.password = "test"
       user.email = auth["info"]["email"]
     end

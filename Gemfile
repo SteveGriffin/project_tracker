@@ -38,6 +38,7 @@ gem 'minitest-reporters'
 gem 'validates_overlap'
 
 gem 'omniauth-github', '1.1.2'
+gem "omniauth-google-oauth2"
 
 # Use unicorn as the app server
 # gem 'unicorn'

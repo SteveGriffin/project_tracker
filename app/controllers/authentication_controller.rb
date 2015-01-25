@@ -2,8 +2,9 @@ class AuthenticationController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    #binding.pry
-    user = User.find_by_provider_and_id(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+    binding.pry
+    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+    binding.pry
     session[:user_id] = user.id
     #binding.pry
 
