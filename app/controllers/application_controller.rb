@@ -8,5 +8,20 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
+    if @current_user.admin == true
+    	session[:admin] = true
+    end
   end
+
+  #return true or false if current user is admin
+  def admin?
+    if current_user != nil
+      if current_user.admin == true
+        true
+    else
+    	false
+      end
+    end
+  end
+
 end

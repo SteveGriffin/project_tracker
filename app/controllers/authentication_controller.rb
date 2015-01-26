@@ -20,4 +20,12 @@ class AuthenticationController < ApplicationController
     redirect_to root_url, :notice => "Signed out!"
   end
 
+  def is_admin
+    if current_user != nil
+      if current_user.admin == true
+        session[:admin] = true
+      end
+    end
+  end
+
 end

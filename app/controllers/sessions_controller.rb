@@ -6,17 +6,6 @@ class SessionsController < ApplicationController
   # GET /sessions.json
   def index
     @sessions = Session.all
-    # @sessions.each do |session|
-    #   if session.end_time == nil
-    #     #session[:active_session] = true
-    #   end
-
-    #   if session[:active_session]
-    #      #notice: "active session in progress"
-    #      #render plain: 'asdf'
-    #   end
-
-    # end
   end
 
   # GET /sessions/1
@@ -47,16 +36,6 @@ class SessionsController < ApplicationController
      redirect_to project_path(@session.project_id), notice: 'Session not saved.  Session time may overlap with another existing session in 
      one of your projects.' 
     end
-
-    # respond_to do |format|
-    #   if @session.save
-    #     format.html { redirect_to @session, notice: 'Session was successfully created.' }
-    #     format.json { render :show, status: :created, location: @session }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @session.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
 
