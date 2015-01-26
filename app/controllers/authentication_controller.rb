@@ -2,13 +2,16 @@ class AuthenticationController < ApplicationController
 
   def create
     auth = request.env["omniauth.auth"]
-    binding.pry
-    user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
-    binding.pry
-    session[:user_id] = user.id
     #binding.pry
+    begin
+      user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+      session[:user_id] = user.id
+      redirect_to root_url, :notice => "Signed in!"
+      #binding.pry
+    rescue Exception => e
+      redirect_to root_url, :notice => e.to_s
+    end
 
-    redirect_to root_url, :notice => "Signed in!"
   end
 
   def destroy
