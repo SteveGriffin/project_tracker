@@ -25,7 +25,6 @@ class SessionsController < ApplicationController
   # POST /sessions
   # POST /sessions.json
   def create
-    binding.pry
     @session = Session.new(session_params)
     @session.save
 

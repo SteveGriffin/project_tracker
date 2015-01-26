@@ -6,11 +6,15 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
   private
 
+  #set and return current user
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    if @current_user.admin == true
-      session[:admin] = true
+    if @current_user != nil
+      if @current_user.admin == true
+        session[:admin] = true
+      end
     end
+    @current_user
   end
 
   helper_method :admin?
@@ -22,6 +26,13 @@ class ApplicationController < ActionController::Base
       else
         false
       end
+    end
+  end
+
+  #if user is not logged in, direct them to login
+  def authenticate
+    if current_user == nil
+      redirect_to login_path
     end
   end
 

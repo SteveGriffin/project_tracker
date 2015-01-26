@@ -1,4 +1,6 @@
 <h1>Dashboard</h1>
+<b>"Hello, <%= current_user.name %>!" <%= link_to "Sign out", controller: 'authentication', action: :destroy  %></b>
+<%= render partial: 'projects', locals: { user_id: current_user.id } %>
+<%= render partial: 'collaborations' %>
+<br />
 
-<%= render 'projects' %>
-<%= render 'collaborations' %>

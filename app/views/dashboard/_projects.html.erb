@@ -1,8 +1,14 @@
 <h1>Your Projects</h1>
-<% if @projects != nil %>
-		<%= render partial: "projects/project", collection: @projects, as: :project %>
+<% @projects = Project.where(user_id: user_id)%>
+<%= link_to "Start A New Project", controller: 'projects', action: :new %>
+
+<% if @projects.count > 0 %>
+	<%= render partial: "projects/project", collection: @projects, as: :project %>
+<% else %>
+	<p>You currently have no projects.</p>
 <% end %>
 
-<%= params.inspect %> 
+
+<%= user_id.inspect %> 
 
 

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :tasks
 
   root to: "users#new"
+
+  get 'authentication/login', :as => :login
   get "/auth/:provider/callback/" => "authentication#create"
   get "/auth/:provider/" => "authentication#create"
   get "/signout" => "authentication#destroy", :as => :signout
