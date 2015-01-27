@@ -4,7 +4,7 @@ class AuthenticationController < ApplicationController
     auth = request.env["omniauth.auth"]
     #binding.pry
     begin
-      user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+      user = User.find_by_provider_and_email(auth["provider"], auth["info"]["email"]) || User.create_with_omniauth(auth)
       session[:user_id] = user.id
       #check if user is admin
       if user.admin == true
