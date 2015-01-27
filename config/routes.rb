@@ -28,6 +28,10 @@ Rails.application.routes.draw do
 
   get'add_collaborator' => 'collaborators#add_collaborator'
 
+  get 'admin' => 'admin#login'
+  post 'admin' => 'admin#authenticate'
+  get 'admin/dashboard' => 'admin#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
