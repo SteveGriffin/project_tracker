@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   get 'admin' => 'admin#login'
   post 'admin' => 'admin#authenticate'
-  get 'admin/dashboard' => 'admin#index'
+  get '/admin/dashboard' => 'admin#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

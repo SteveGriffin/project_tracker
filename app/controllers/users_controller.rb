@@ -4,16 +4,19 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    admin?
     @users = User.all
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    access?(params[:id])
   end
 
   # GET /users/new
   def new
+    admin?
     @user = User.new
   end
 

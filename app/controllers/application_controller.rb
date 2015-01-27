@@ -18,14 +18,25 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :admin?
-  #return true or false if current user is admin
+  #redirect to home if user is not an admin
   def admin?
-    if session[:admin] != nil
-      if session[:admin] == true
-        true
+    if session[:admin] == true
+
+    else
+      redirect_to root_url
+    end
+  end
+
+  #if not the current user or admin, deny access and redirect
+  def access?(id)
+   #binding.pry
+    if current_user
+      if id == current_user.id || current_user.admin == true
       else
-        false
+        redirect_to root_url
       end
+    else
+      redirect_to root_url
     end
   end
 

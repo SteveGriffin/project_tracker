@@ -21,7 +21,7 @@ class AdminController < ApplicationController
     if user && user.admin == true && user.authenticate(params[:password])
       session[:user_id] = user.id
       session[:admin] = user.admin
-      redirect_to "/admin/dashboard"
+      redirect_to admin_dashboard_path
     else
       flash.now.alert = "Email or password is invalid"
       render plain: "Login failed"

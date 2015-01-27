@@ -4,6 +4,7 @@ class CollaboratorsController < ApplicationController
   # GET /collaborators
   # GET /collaborators.json
   def index
+    admin?
     @collaborators = Collaborator.all
   end
 

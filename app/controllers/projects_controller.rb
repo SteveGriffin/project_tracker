@@ -4,15 +4,20 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
+    admin?
     @projects = Project.all
   end
 
   # GET /projects/1
   # GET /projects/1.json
   def show
-    respond_to do |format|
-      format.html
-      format.csv {render text: Project.csv(@project)}
+    if authorized?
+      respond_to do |format|
+        format.html
+        format.csv {render text: Project.csv(@project)}
+      end
+    else
+      redirect_to root_url
     end
   end
 
@@ -74,14 +79,51 @@ class ProjectsController < ApplicationController
     end
   end
 
-  private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_project
-    @project = Project.find(params[:id])
+  #check if current user is authorized to view the project.
+  #if not a project owner or collaborator, return false
+  def authorized?
+    #if current_user is nil, return false
+    #otherwise, check for authorization
+    if current_user
+      authorized = false
+
+      #if user is admin, return true
+      if session[:admin] == true
+       true
+      else
+        #puts authorized user ids in an array and check against
+        #the current_user id
+        authorized_users = Array.new
+
+        authorized_users.push(@project.user_id)
+        @project.collaborators.each do |col|
+          authorized_users.push(col.user_id)
+        end
+
+        authorized_users.each do |user|
+          if current_user.id == user
+            authorized == true
+          end
+        end
+        #authorized user not found
+        if !authorized
+          false
+        end
+      end
+    else
+      #current_user is nil, return false
+      false
+    end
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def project_params
-    params.require(:project).permit(:name, :description, :completion_date, :user_id, :project_id)
+    private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_project
+      @project = Project.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def project_params
+      params.require(:project).permit(:name, :description, :completion_date, :user_id, :project_id)
+    end
   end
-end

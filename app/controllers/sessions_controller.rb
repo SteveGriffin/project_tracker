@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
   # GET /sessions
   # GET /sessions.json
   def index
+    admin?
     @sessions = Session.all
   end
 
