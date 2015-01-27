@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :tasks
 
-  root to: "users#new"
+  root to: "home#index"
 
   get 'authentication/login', :as => :login
   get "/auth/:provider/callback/" => "authentication#create"
