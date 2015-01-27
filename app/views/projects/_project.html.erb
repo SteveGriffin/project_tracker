@@ -1,3 +1,4 @@
+<div id="project">
 <p id="notice"><%= notice %></p>
 <p>
   <h2><strong>Project Name:</strong>
@@ -36,4 +37,5 @@
 						 	Project is active.  <%= link_to 'Click Here To End Project', redirect_to: project_path(id: project.id, project:{completion_date: Time.now}), method: :put %>
 						 	<% end %>
 						 	<br />
+</div>
 

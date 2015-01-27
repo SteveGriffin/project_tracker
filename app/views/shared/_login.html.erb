@@ -1,3 +1,8 @@
-<h3>Login</h3>
-	<%= link_to "Sign in with Github", "/auth/github" %>
+<% if current_user %>
+	Logged in as: <%= current_user.name %>
+	<%= link_to "signout", controller: :authentication, action: :destroy %>
+<% else %>
+	<h3>Login</h3>
+	<%= link_to "Sign in with Github", "/auth/github" %><br />
 	<%= link_to "Sign in with Google", "/auth/google_oauth2" %>
+<% end %>
