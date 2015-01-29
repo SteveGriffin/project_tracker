@@ -89,7 +89,7 @@ class ProjectsController < ApplicationController
 
       #if user is admin, return true
       if session[:admin] == true
-       true
+        true
       else
         #puts authorized user ids in an array and check against
         #the current_user id
@@ -116,14 +116,14 @@ class ProjectsController < ApplicationController
     end
   end
 
-    private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = Project.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_params
-      params.require(:project).permit(:name, :description, :completion_date, :user_id, :project_id)
-    end
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = Project.find(params[:id])
   end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def project_params
+    params.require(:project).permit(:name, :description, :completion_date, :user_id, :project_id)
+  end
+end
