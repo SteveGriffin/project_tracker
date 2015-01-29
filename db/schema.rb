@@ -23,12 +23,6 @@ ActiveRecord::Schema.define(version: 20150125225335) do
   add_index "collaborators", ["project_id"], name: "index_collaborators_on_project_id"
   add_index "collaborators", ["user_id"], name: "index_collaborators_on_user_id"
 
-  create_table "controllers", force: true do |t|
-    t.string   "dashboard"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "projects", force: true do |t|
     t.string   "name"
     t.text     "description"
