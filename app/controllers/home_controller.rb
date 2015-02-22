@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
 
-	def index
-	end
-	
+  def index
+    if current_user
+      redirect_to dashboard_path(current_user.id)
+    end
+  end
+
 end
