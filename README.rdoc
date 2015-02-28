@@ -1,28 +1,5 @@
-== README
+== Project Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Project Tracker is a service that allows hobbyists, contractors, and other professionals the ability to track their time spent on projects and project tasks.  The system also allows for collaborations on the same project across multiple users.  Currently under development before initial deployment.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
