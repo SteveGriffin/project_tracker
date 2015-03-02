@@ -70,6 +70,12 @@ class Project < ActiveRecord::Base
       hours, minutes= total.divmod(60)
       #round the minutes
       minutes = minutes.ceil
+
+      #if minutes are rounded up to 60 total, increment hours and set minutes to zero
+      if minutes == 60
+        hours += 1
+        minutes = 0
+      end
     end
 
     #create and return hash of hours and minutes

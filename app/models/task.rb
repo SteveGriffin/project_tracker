@@ -30,10 +30,18 @@ class Task < ActiveRecord::Base
       minutes = minutes.ceil
     end
 
+    #if minutes are rounded up to 60 total, increment hours and set minutes to zero
+    if minutes == 60
+      hours += 1
+      minutes = 0
+    end
+
     #create and return hash of hours and minutes
     result = Hash.new
     result[:hours] = hours
     result[:minutes] = minutes
+
+
     #return result
     result
   end
