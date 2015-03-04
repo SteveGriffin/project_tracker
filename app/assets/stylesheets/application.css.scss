@@ -23,24 +23,33 @@
   border: 2px solid blue;
   text-align:center;
   overflow: auto;
+  border-radius: 10px;
 }
 
 #title {
-  text-align:center;
+  //text-align:center;
   font-size: 20px;
-  float:left;
-  width: 1000px;
+  //float:left;
+  //width: 1000px;
   overflow: auto
 }
 
 #header {
   overflow:auto;
-  width:100%;
+  //width:100%;
   background:#6cf;
 }
 
+.jumbotron {
+  background:#6cf;
+  //border: 10px solid;
+  border-radius: 8px;
+}
+
+
 #body {
-  background: #E9967A;
+  //background: #E9967A;
+  background: #E0E0E0;
   font-family: 'Helvetica';
 }
 
@@ -50,12 +59,14 @@
   //width:100%;
   height:30px;   /* Height of the footer */
   background:#6cf;
+  border-radius: 10px;
 }
 
 #project {
   border: 2px solid blue;
   text-align:center;
   width:800px;
+  border-radius: 10px;
 
 }
 
