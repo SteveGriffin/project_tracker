@@ -33,6 +33,7 @@ group :development, :test do
   gem 'minitest-reporters'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'rubocop'
 end
 group :production do
   gem 'pg'
