@@ -69,10 +69,10 @@ class CollaboratorsController < ApplicationController
 
     @user = User.find_by(email: email)
 
-    if @user != nil
+    if @user.nil? == false
       #check if user is already a collaborator
       @existing = Collaborator.find_by(user_id: @user.id, project_id: project_id)
-      if @existing != nil
+      if @existing.nil? == false
         redirect_to project_url(project_id), notice: "Collaborator is already a contributor to this project"
       else
         #add user as a collaborator

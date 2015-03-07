@@ -1,0 +1,1753 @@
+Inspecting 91 files
+CCCCCWCCCCCCCCCCCCCCCCCCCCCCCCWCCCCCCCCCWCCCWCCCCCCCCCC..C.C.C.C.CCCCCW.WW.WCC.C.CC.CCCCC.C
+
+Offenses:
+
+Gemfile:3:1: C: Extra blank line detected.
+Gemfile:26:81: C: Line is too long. [128/80]
+# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Gemfile:43:14: C: Missing space after #.
+gem 'bcrypt' #, '~> 3.1.7'
+             ^^^^^^^^^^^^^
+Gemfile:48:5: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+gem "omniauth-google-oauth2"
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+Rakefile:2:81: C: Line is too long. [90/80]
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+                                                                                ^^^^^^^^^^
+test/controllers/sessions_controller_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/sessions_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class SessionsControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/sessions_controller_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/controllers/sessions_controller_test.rb:22:81: C: Line is too long. [149/80]
+      post :create, session: { end_time: session.end_time, project_id: session.project_id, start_time: session.start_time, task_id: session.task_id }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/sessions_controller_test.rb:39:81: C: Line is too long. [159/80]
+    put :update, id: session, session: { end_time: session.end_time, project_id: session.project_id, start_time: session.start_time, task_id: session.task_id }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/tasks_controller_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/tasks_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class TasksControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/tasks_controller_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/controllers/tasks_controller_test.rb:39:81: C: Line is too long. [87/80]
+    put :update, id: task, task: { project_id: task.project_id, user_id: task.user_id }
+                                                                                ^^^^^^^
+test/controllers/authentication_controller_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/authentication_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class AuthenticationControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/authentication_controller_test.rb:5:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    flunk "Need real tests"
+          ^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class UsersControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/users_controller_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/controllers/users_controller_test.rb:24:3: C: Missing space after #.
+  #needs explicit email value created or else fails for some reason
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:26:3: C: Use 2 (not 3) spaces for indentation.
+     assert_difference('User.count') do
+  ^^^
+test/controllers/users_controller_test.rb:27:5: C: Use 2 (not 1) spaces for indentation.
+     @user.email = "asdfasdgfasdf@asdfasd.com"
+    ^
+test/controllers/users_controller_test.rb:27:20: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+     @user.email = "asdfasdgfasdf@asdfasd.com"
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:28:8: C: Missing space after #.
+       #post :create, user: { admin: user.admin, email: user.email, name: user.name, password: user.password_digest}
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:28:81: C: Line is too long. [116/80]
+       #post :create, user: { admin: user.admin, email: user.email, name: user.name, password: user.password_digest}
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:29:8: C: Inconsistent indentation detected.
+       post :create, user: {email: @user.email.to_s,password: @user.password_digest}
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:29:28: C: Space inside { missing.
+       post :create, user: {email: @user.email.to_s,password: @user.password_digest}
+                           ^
+test/controllers/users_controller_test.rb:29:52: C: Space missing after comma.
+       post :create, user: {email: @user.email.to_s,password: @user.password_digest}
+                                                   ^
+test/controllers/users_controller_test.rb:29:81: C: Line is too long. [84/80]
+       post :create, user: {email: @user.email.to_s,password: @user.password_digest}
+                                                                                ^^^^
+test/controllers/users_controller_test.rb:29:84: C: Space inside } missing.
+       post :create, user: {email: @user.email.to_s,password: @user.password_digest}
+                                                                                   ^
+test/controllers/users_controller_test.rb:30:5: W: end at 30, 4 is not aligned with assert_difference('User.count') do at 26, 5
+    end
+    ^^^
+test/controllers/users_controller_test.rb:32:5: C: Inconsistent indentation detected.
+    assert_redirected_to user_path(assigns(:user)), @response.body
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:46:81: C: Line is too long. [122/80]
+    put :update, id: user, user: { admin: user.admin, email: user.email, name: user.name, password_digest: user.password }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/users_controller_test.rb:47:30: C: Missing space after #.
+    assert_response :success #assert_redirected_to user_path(assigns(:user))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/home_controller_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/home_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class HomeControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/home_controller_test.rb:5:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    flunk "Need real tests"
+          ^^^^^^^^^^^^^^^^^
+test/controllers/dashboard_controller_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/dashboard_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class DashboardControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/dashboard_controller_test.rb:5:5: C: Missing space after #.
+    #flunk "Need real tests"
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/collaborators_controller_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/collaborators_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class CollaboratorsControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/collaborators_controller_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/controllers/collaborators_controller_test.rb:22:81: C: Line is too long. [104/80]
+      post :create, collaborator: { project_id: collaborator.project_id, user_id: collaborator.user_id }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/collaborators_controller_test.rb:39:81: C: Line is too long. [119/80]
+    put :update, id: collaborator, collaborator: { project_id: collaborator.project_id, user_id: collaborator.user_id }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/projects_controller_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/projects_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class ProjectsControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/projects_controller_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/controllers/projects_controller_test.rb:22:81: C: Line is too long. [153/80]
+      post :create, project: { completion_date: project.completion_date, description: project.description, name: project.name, user_id: project.user_id }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/projects_controller_test.rb:39:81: C: Line is too long. [163/80]
+    put :update, id: project, project: { completion_date: project.completion_date, description: project.description, name: project.name, user_id: project.user_id }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+test/controllers/admin_controller_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/controllers/admin_controller_test.rb:3:1: C: Missing top-level class documentation comment.
+class AdminControllerTest < ActionController::TestCase
+^^^^^
+test/controllers/admin_controller_test.rb:5:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    flunk "Need real tests"
+          ^^^^^^^^^^^^^^^^^
+test/test_helper.rb:5:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "minitest/reporters"
+        ^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:8:1: C: Extra blank line detected.
+test/test_helper.rb:9:1: C: Missing top-level class documentation comment.
+class ActiveSupport::TestCase
+^^^^^
+test/test_helper.rb:9:7: C: Use nested module/class definitions instead of compact style.
+class ActiveSupport::TestCase
+      ^^^^^^^^^^^^^^^^^^^^^^^
+test/test_helper.rb:10:81: C: Line is too long. [82/80]
+  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
+                                                                                ^^
+test/test_helper.rb:12:81: C: Line is too long. [89/80]
+  # Note: You'll currently still have to declare fixtures explicitly in integration tests
+                                                                                ^^^^^^^^^
+test/test_helper.rb:16:1: C: Extra blank line detected.
+test/helpers/dashboard_helper_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/helpers/dashboard_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class DashboardHelperTest < ActionView::TestCase
+^^^^^
+test/helpers/dashboard_helper_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/helpers/dashboard_helper_test.rb:6:5: C: Missing space after #.
+    #flunk "Need real tests"
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+test/helpers/dashboard_helper_test.rb:8:1: C: Extra empty line detected at class body end.
+test/helpers/admin_helper_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/helpers/admin_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class AdminHelperTest < ActionView::TestCase
+^^^^^
+test/helpers/admin_helper_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/helpers/admin_helper_test.rb:6:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    flunk "Need real tests"
+          ^^^^^^^^^^^^^^^^^
+test/helpers/admin_helper_test.rb:8:1: C: Extra empty line detected at class body end.
+test/helpers/home_helper_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/helpers/home_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class HomeHelperTest < ActionView::TestCase
+^^^^^
+test/helpers/home_helper_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/helpers/home_helper_test.rb:6:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    flunk "Need real tests"
+          ^^^^^^^^^^^^^^^^^
+test/helpers/home_helper_test.rb:8:1: C: Extra empty line detected at class body end.
+test/helpers/tasks_helper_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/helpers/tasks_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class TasksHelperTest < ActionView::TestCase
+^^^^^
+test/helpers/tasks_helper_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/helpers/tasks_helper_test.rb:6:4: C: Incorrect indentation detected (column 3 instead of 4).
+   # flunk "Need real tests"
+   ^^^^^^^^^^^^^^^^^^^^^^^^^
+test/helpers/tasks_helper_test.rb:8:1: C: Extra empty line detected at class body end.
+test/helpers/sessions_helper_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/helpers/sessions_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class SessionsHelperTest < ActionView::TestCase
+^^^^^
+test/helpers/sessions_helper_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/helpers/sessions_helper_test.rb:6:5: C: Missing space after #.
+    #flunk "Need real tests"
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+test/helpers/sessions_helper_test.rb:8:1: C: Extra empty line detected at class body end.
+test/helpers/collaborators_helper_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/helpers/collaborators_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class CollaboratorsHelperTest < ActionView::TestCase
+^^^^^
+test/helpers/collaborators_helper_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/helpers/collaborators_helper_test.rb:6:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    flunk "Need real tests"
+          ^^^^^^^^^^^^^^^^^
+test/helpers/collaborators_helper_test.rb:8:1: C: Extra empty line detected at class body end.
+test/helpers/users_helper_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/helpers/users_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class UsersHelperTest < ActionView::TestCase
+^^^^^
+test/helpers/users_helper_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/helpers/users_helper_test.rb:6:5: C: Missing space after #.
+    #flunk "Need real tests"
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+test/helpers/users_helper_test.rb:8:1: C: Extra empty line detected at class body end.
+test/helpers/projects_helper_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/helpers/projects_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class ProjectsHelperTest < ActionView::TestCase
+^^^^^
+test/helpers/projects_helper_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/helpers/projects_helper_test.rb:6:5: C: Missing space after #.
+    #flunk "Need real tests"
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+test/helpers/projects_helper_test.rb:8:1: C: Extra empty line detected at class body end.
+test/helpers/authentication_helper_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/helpers/authentication_helper_test.rb:3:1: C: Missing top-level class documentation comment.
+class AuthenticationHelperTest < ActionView::TestCase
+^^^^^
+test/helpers/authentication_helper_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/helpers/authentication_helper_test.rb:6:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    flunk "Need real tests"
+          ^^^^^^^^^^^^^^^^^
+test/helpers/authentication_helper_test.rb:8:1: C: Extra empty line detected at class body end.
+test/lib/tracking_test.rb:4:1: C: Missing top-level class documentation comment.
+class TestsTracker < ActionController::TestCase
+^^^^^
+test/lib/tracking_test.rb:6:5: C: Missing space after #.
+    #@test = tests(:one)
+    ^^^^^^^^^^^^^^^^^^^^
+test/lib/tracking_test.rb:9:8: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  test "should get time" do
+       ^^^^^^^^^^^^^^^^^
+test/lib/tracking_test.rb:13:1: C: Extra empty line detected at class body end.
+test/models/project_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/project_test.rb:3:1: C: Missing top-level class documentation comment.
+class ProjectTest < ActiveSupport::TestCase
+^^^^^
+test/models/project_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/models/project_test.rb:12:1: C: Extra empty line detected at class body end.
+test/models/task_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/task_test.rb:3:1: C: Missing top-level class documentation comment.
+class TaskTest < ActiveSupport::TestCase
+^^^^^
+test/models/task_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/models/task_test.rb:12:1: C: Extra empty line detected at class body end.
+test/models/collaborator_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/collaborator_test.rb:3:1: C: Missing top-level class documentation comment.
+class CollaboratorTest < ActiveSupport::TestCase
+^^^^^
+test/models/collaborator_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/models/collaborator_test.rb:12:1: C: Extra empty line detected at class body end.
+test/models/session_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/session_test.rb:3:1: C: Missing top-level class documentation comment.
+class SessionTest < ActiveSupport::TestCase
+^^^^^
+test/models/session_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/models/session_test.rb:12:1: C: Extra empty line detected at class body end.
+test/models/user_test.rb:1:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+require "test_helper"
+        ^^^^^^^^^^^^^
+test/models/user_test.rb:3:1: C: Missing top-level class documentation comment.
+class UserTest < ActiveSupport::TestCase
+^^^^^
+test/models/user_test.rb:4:1: C: Extra empty line detected at class body beginning.
+test/models/user_test.rb:6:31: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @user ||= User.new(email: "test2@test.com", password: "test")
+                              ^^^^^^^^^^^^^^^^
+test/models/user_test.rb:6:59: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    @user ||= User.new(email: "test2@test.com", password: "test")
+                                                          ^^^^^^
+test/models/user_test.rb:9:1: C: Extra blank line detected.
+test/models/user_test.rb:11:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    assert user.valid?, "User valid"
+                        ^^^^^^^^^^^^
+test/models/user_test.rb:13:1: C: Extra empty line detected at class body end.
+db/seeds.rb:1:81: C: Line is too long. [103/80]
+# This file should contain all the record creation needed to seed the database with its default values.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^
+db/seeds.rb:2:81: C: Line is too long. [96/80]
+# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+                                                                                ^^^^^^^^^^^^^^^^
+db/schema.rb:4:81: C: Line is too long. [81/80]
+# incrementally modify your database, and then regenerate this schema definition.
+                                                                                ^
+db/schema.rb:9:81: C: Line is too long. [86/80]
+# from scratch. The latter is a flawed and unsustainable approach (the more migrations
+                                                                                ^^^^^^
+db/schema.rb:12:81: C: Line is too long. [86/80]
+# It's strongly recommended that you check this file into your version control system.
+                                                                                ^^^^^^
+db/schema.rb:14:38: C: Separate every 3 digits in the integer portion of a number with underscores(_).
+ActiveRecord::Schema.define(version: 20150125225335) do
+                                     ^^^^^^^^^^^^^^
+db/schema.rb:15:1: C: Extra empty line detected at block body beginning.
+db/schema.rb:16:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "collaborators", force: true do |t|
+               ^^^^^^^^^^^^^^^
+db/schema.rb:17:14: C: Put one space between the method name and the first argument.
+    t.integer  "user_id"
+             ^^
+db/schema.rb:17:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_id"
+               ^^^^^^^^^
+db/schema.rb:18:14: C: Put one space between the method name and the first argument.
+    t.integer  "project_id"
+             ^^
+db/schema.rb:18:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "project_id"
+               ^^^^^^^^^^^^
+db/schema.rb:19:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/schema.rb:20:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/schema.rb:23:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "collaborators", ["project_id"], name: "index_collaborators_on_project_id"
+            ^^^^^^^^^^^^^^^
+db/schema.rb:23:31: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "collaborators", ["project_id"], name: "index_collaborators_on_project_id"
+                              ^^^^^^^^^^^^
+db/schema.rb:23:52: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "collaborators", ["project_id"], name: "index_collaborators_on_project_id"
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:23:81: C: Line is too long. [86/80]
+  add_index "collaborators", ["project_id"], name: "index_collaborators_on_project_id"
+                                                                                ^^^^^^
+db/schema.rb:24:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "collaborators", ["user_id"], name: "index_collaborators_on_user_id"
+            ^^^^^^^^^^^^^^^
+db/schema.rb:24:31: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "collaborators", ["user_id"], name: "index_collaborators_on_user_id"
+                              ^^^^^^^^^
+db/schema.rb:24:49: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "collaborators", ["user_id"], name: "index_collaborators_on_user_id"
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:26:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "projects", force: true do |t|
+               ^^^^^^^^^^
+db/schema.rb:27:13: C: Put one space between the method name and the first argument.
+    t.string   "name"
+            ^^^
+db/schema.rb:27:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/schema.rb:28:11: C: Put one space between the method name and the first argument.
+    t.text     "description"
+          ^^^^^
+db/schema.rb:28:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "description"
+               ^^^^^^^^^^^^^
+db/schema.rb:29:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "completion_date"
+               ^^^^^^^^^^^^^^^^^
+db/schema.rb:30:14: C: Put one space between the method name and the first argument.
+    t.integer  "user_id"
+             ^^
+db/schema.rb:30:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_id"
+               ^^^^^^^^^
+db/schema.rb:31:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/schema.rb:32:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/schema.rb:35:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+            ^^^^^^^^^^
+db/schema.rb:35:26: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+                         ^^^^^^^^^
+db/schema.rb:35:44: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:37:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "sessions", force: true do |t|
+               ^^^^^^^^^^
+db/schema.rb:38:14: C: Put one space between the method name and the first argument.
+    t.integer  "project_id"
+             ^^
+db/schema.rb:38:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "project_id"
+               ^^^^^^^^^^^^
+db/schema.rb:39:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "start_time"
+               ^^^^^^^^^^^^
+db/schema.rb:40:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "end_time"
+               ^^^^^^^^^^
+db/schema.rb:41:14: C: Put one space between the method name and the first argument.
+    t.integer  "task_id"
+             ^^
+db/schema.rb:41:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "task_id"
+               ^^^^^^^^^
+db/schema.rb:42:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/schema.rb:43:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/schema.rb:44:14: C: Put one space between the method name and the first argument.
+    t.boolean  "active"
+             ^^
+db/schema.rb:44:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean  "active"
+               ^^^^^^^^
+db/schema.rb:45:14: C: Put one space between the method name and the first argument.
+    t.integer  "user_id"
+             ^^
+db/schema.rb:45:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_id"
+               ^^^^^^^^^
+db/schema.rb:48:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "sessions", ["project_id"], name: "index_sessions_on_project_id"
+            ^^^^^^^^^^
+db/schema.rb:48:26: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "sessions", ["project_id"], name: "index_sessions_on_project_id"
+                         ^^^^^^^^^^^^
+db/schema.rb:48:47: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "sessions", ["project_id"], name: "index_sessions_on_project_id"
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:49:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "sessions", ["task_id"], name: "index_sessions_on_task_id"
+            ^^^^^^^^^^
+db/schema.rb:49:26: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "sessions", ["task_id"], name: "index_sessions_on_task_id"
+                         ^^^^^^^^^
+db/schema.rb:49:44: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "sessions", ["task_id"], name: "index_sessions_on_task_id"
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:50:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "sessions", ["user_id"], name: "index_sessions_on_user_id"
+            ^^^^^^^^^^
+db/schema.rb:50:26: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "sessions", ["user_id"], name: "index_sessions_on_user_id"
+                         ^^^^^^^^^
+db/schema.rb:50:44: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "sessions", ["user_id"], name: "index_sessions_on_user_id"
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:52:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "tasks", force: true do |t|
+               ^^^^^^^
+db/schema.rb:53:14: C: Put one space between the method name and the first argument.
+    t.integer  "project_id"
+             ^^
+db/schema.rb:53:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "project_id"
+               ^^^^^^^^^^^^
+db/schema.rb:54:14: C: Put one space between the method name and the first argument.
+    t.integer  "user_id"
+             ^^
+db/schema.rb:54:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_id"
+               ^^^^^^^^^
+db/schema.rb:55:11: C: Put one space between the method name and the first argument.
+    t.text     "description"
+          ^^^^^
+db/schema.rb:55:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "description"
+               ^^^^^^^^^^^^^
+db/schema.rb:56:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/schema.rb:57:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/schema.rb:60:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "tasks", ["project_id"], name: "index_projects_on_project_id"
+            ^^^^^^^
+db/schema.rb:60:23: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "tasks", ["project_id"], name: "index_projects_on_project_id"
+                      ^^^^^^^^^^^^
+db/schema.rb:60:44: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "tasks", ["project_id"], name: "index_projects_on_project_id"
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:61:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
+            ^^^^^^^
+db/schema.rb:61:23: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
+                      ^^^^^^^^^
+db/schema.rb:61:41: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^
+db/schema.rb:63:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "users", force: true do |t|
+               ^^^^^^^
+db/schema.rb:64:13: C: Put one space between the method name and the first argument.
+    t.string   "name"
+            ^^^
+db/schema.rb:64:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/schema.rb:65:13: C: Put one space between the method name and the first argument.
+    t.string   "email"
+            ^^^
+db/schema.rb:65:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "email"
+               ^^^^^^^
+db/schema.rb:66:13: C: Put one space between the method name and the first argument.
+    t.string   "password_digest"
+            ^^^
+db/schema.rb:66:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "password_digest"
+               ^^^^^^^^^^^^^^^^^
+db/schema.rb:67:14: C: Put one space between the method name and the first argument.
+    t.boolean  "admin",           default: false
+             ^^
+db/schema.rb:67:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean  "admin",           default: false
+               ^^^^^^^
+db/schema.rb:68:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/schema.rb:69:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/schema.rb:70:14: C: Put one space between the method name and the first argument.
+    t.boolean  "active",          default: true
+             ^^
+db/schema.rb:70:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean  "active",          default: true
+               ^^^^^^^^
+db/schema.rb:71:13: C: Put one space between the method name and the first argument.
+    t.string   "provider"
+            ^^^
+db/schema.rb:71:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "provider"
+               ^^^^^^^^^^
+db/schema.rb:72:13: C: Put one space between the method name and the first argument.
+    t.string   "uid"
+            ^^^
+db/schema.rb:72:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "uid"
+               ^^^^^
+db/schema.rb:74:1: C: Extra empty line detected at block body end.
+db/migrate/20150125225335_add_column_to_users_uid.rb:1:1: C: Missing top-level class documentation comment.
+class AddColumnToUsersUid < ActiveRecord::Migration
+^^^^^
+db/migrate/20150109205315_setup_db.rb:1:1: C: Missing top-level class documentation comment.
+class SetupDb < ActiveRecord::Migration
+^^^^^
+db/migrate/20150109205315_setup_db.rb:2:3: C: Assignment Branch Condition size for change is too high. [33/15]
+  def change
+  ^^^
+db/migrate/20150109205315_setup_db.rb:2:3: C: Method has too many lines. [37/10]
+  def change
+  ^^^
+db/migrate/20150109205315_setup_db.rb:3:1: C: Extra empty line detected at method body beginning.
+db/migrate/20150109205315_setup_db.rb:4:3: C: Use 2 (not 1) spaces for indentation.
+  	create_table "projects", force: true do |t|
+  ^
+db/migrate/20150109205315_setup_db.rb:4:3: C: Tab detected.
+  	create_table "projects", force: true do |t|
+  ^
+db/migrate/20150109205315_setup_db.rb:4:17: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  	create_table "projects", force: true do |t|
+                ^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:5:13: C: Put one space between the method name and the first argument.
+    t.string   "name"
+            ^^^
+db/migrate/20150109205315_setup_db.rb:5:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/migrate/20150109205315_setup_db.rb:6:11: C: Put one space between the method name and the first argument.
+    t.text     "description"
+          ^^^^^
+db/migrate/20150109205315_setup_db.rb:6:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text     "description"
+               ^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:7:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "completion_date"
+               ^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:8:14: C: Put one space between the method name and the first argument.
+    t.integer  "user_id"
+             ^^
+db/migrate/20150109205315_setup_db.rb:8:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_id"
+               ^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:9:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:10:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:11:3: W: end at 11, 2 is not aligned with create_table "projects", force: true do |t| at 4, 3
+  end
+  ^^^
+db/migrate/20150109205315_setup_db.rb:13:3: C: Inconsistent indentation detected.
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:13:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+            ^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:13:26: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+                         ^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:13:44: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id"
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:15:3: C: Inconsistent indentation detected.
+  create_table "sessions", force: true do |t|
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:15:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "sessions", force: true do |t|
+               ^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:16:14: C: Put one space between the method name and the first argument.
+    t.integer  "project_id"
+             ^^
+db/migrate/20150109205315_setup_db.rb:16:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "project_id"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:17:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "start_time"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:18:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "end_time"
+               ^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:19:14: C: Put one space between the method name and the first argument.
+    t.integer  "task_id"
+             ^^
+db/migrate/20150109205315_setup_db.rb:19:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "task_id"
+               ^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:20:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:21:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:24:2: C: Inconsistent indentation detected.
+ add_index "sessions", ["project_id"], name: "index_sessions_on_project_id"
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:24:12: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "sessions", ["project_id"], name: "index_sessions_on_project_id"
+           ^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:24:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "sessions", ["project_id"], name: "index_sessions_on_project_id"
+                        ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:24:46: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "sessions", ["project_id"], name: "index_sessions_on_project_id"
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:25:2: C: Inconsistent indentation detected.
+ add_index "sessions", ["task_id"], name: "index_sessions_on_task_id"
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:25:12: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "sessions", ["task_id"], name: "index_sessions_on_task_id"
+           ^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:25:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "sessions", ["task_id"], name: "index_sessions_on_task_id"
+                        ^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:25:43: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "sessions", ["task_id"], name: "index_sessions_on_task_id"
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:27:3: C: Inconsistent indentation detected.
+  create_table "tasks", force: true do |t|
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:27:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "tasks", force: true do |t|
+               ^^^^^^^
+db/migrate/20150109205315_setup_db.rb:28:14: C: Put one space between the method name and the first argument.
+    t.integer  "project_id"
+             ^^
+db/migrate/20150109205315_setup_db.rb:28:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "project_id"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:29:14: C: Put one space between the method name and the first argument.
+    t.integer  "user_id"
+             ^^
+db/migrate/20150109205315_setup_db.rb:29:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.integer  "user_id"
+               ^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:30:12: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.text "description"
+           ^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:31:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:32:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:35:2: C: Inconsistent indentation detected.
+ add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:35:12: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
+           ^^^^^^^
+db/migrate/20150109205315_setup_db.rb:35:22: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
+                     ^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:35:40: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "tasks", ["user_id"], name: "index_tasks_on_user_id"
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:36:2: C: Inconsistent indentation detected.
+ add_index "tasks", ["project_id"], name: "index_projects_on_project_id"
+ ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:36:12: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "tasks", ["project_id"], name: "index_projects_on_project_id"
+           ^^^^^^^
+db/migrate/20150109205315_setup_db.rb:36:22: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "tasks", ["project_id"], name: "index_projects_on_project_id"
+                     ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:36:43: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+ add_index "tasks", ["project_id"], name: "index_projects_on_project_id"
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:38:3: C: Inconsistent indentation detected.
+  create_table "users", force: true do |t|
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:38:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  create_table "users", force: true do |t|
+               ^^^^^^^
+db/migrate/20150109205315_setup_db.rb:39:13: C: Put one space between the method name and the first argument.
+    t.string   "name"
+            ^^^
+db/migrate/20150109205315_setup_db.rb:39:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "name"
+               ^^^^^^
+db/migrate/20150109205315_setup_db.rb:40:13: C: Put one space between the method name and the first argument.
+    t.string   "email"
+            ^^^
+db/migrate/20150109205315_setup_db.rb:40:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "email"
+               ^^^^^^^
+db/migrate/20150109205315_setup_db.rb:41:13: C: Put one space between the method name and the first argument.
+    t.string   "password_digest"
+            ^^^
+db/migrate/20150109205315_setup_db.rb:41:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.string   "password_digest"
+               ^^^^^^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:42:14: C: Put one space between the method name and the first argument.
+    t.boolean  "admin",			default: false
+             ^^
+db/migrate/20150109205315_setup_db.rb:42:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean  "admin",			default: false
+               ^^^^^^^
+db/migrate/20150109205315_setup_db.rb:43:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "created_at"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:44:16: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.datetime "updated_at"
+               ^^^^^^^^^^^^
+db/migrate/20150109205315_setup_db.rb:45:15: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    t.boolean "active",			default: true
+              ^^^^^^^^
+db/migrate/20150123172721_add_index_to_sessions.rb:1:1: C: Missing top-level class documentation comment.
+class AddIndexToSessions < ActiveRecord::Migration
+^^^^^
+db/migrate/20150124185959_add_column_to_users.rb:1:1: C: Missing top-level class documentation comment.
+class AddColumnToUsers < ActiveRecord::Migration
+^^^^^
+db/migrate/20150116172700_add_active_to_sessions.rb:1:1: C: Missing top-level class documentation comment.
+class AddActiveToSessions < ActiveRecord::Migration
+^^^^^
+db/migrate/20150119161625_create_collaborators.rb:1:1: C: Missing top-level class documentation comment.
+class CreateCollaborators < ActiveRecord::Migration
+^^^^^
+app/controllers/collaborators_controller.rb:1:1: C: Missing top-level class documentation comment.
+class CollaboratorsController < ApplicationController
+^^^^^
+app/controllers/collaborators_controller.rb:32:81: C: Line is too long. [99/80]
+        format.html { redirect_to @collaborator, notice: 'Collaborator was successfully created.' }
+                                                                                ^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:36:81: C: Line is too long. [88/80]
+        format.json { render json: @collaborator.errors, status: :unprocessable_entity }
+                                                                                ^^^^^^^^
+app/controllers/collaborators_controller.rb:46:81: C: Line is too long. [99/80]
+        format.html { redirect_to @collaborator, notice: 'Collaborator was successfully updated.' }
+                                                                                ^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:50:81: C: Line is too long. [88/80]
+        format.json { render json: @collaborator.errors, status: :unprocessable_entity }
+                                                                                ^^^^^^^^
+app/controllers/collaborators_controller.rb:60:81: C: Line is too long. [103/80]
+      format.html { redirect_to collaborators_url, notice: 'Collaborator was successfully destroyed.' }
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:65:3: C: Missing space after #.
+  #Add a collaborator by email
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:66:3: C: Assignment Branch Condition size for add_collaborator is too high. [20.71/15]
+  def add_collaborator
+  ^^^
+app/controllers/collaborators_controller.rb:66:3: C: Method has too many lines. [17/10]
+  def add_collaborator
+  ^^^
+app/controllers/collaborators_controller.rb:72:14: C: Prefer !expression.nil? over expression != nil.
+    if @user != nil
+             ^^
+app/controllers/collaborators_controller.rb:73:7: C: Missing space after #.
+      #check if user is already a collaborator
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:74:81: C: Line is too long. [81/80]
+      @existing = Collaborator.find_by(user_id: @user.id, project_id: project_id)
+                                                                                ^
+app/controllers/collaborators_controller.rb:75:20: C: Prefer !expression.nil? over expression != nil.
+      if @existing != nil
+                   ^^
+app/controllers/collaborators_controller.rb:76:54: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        redirect_to project_url(project_id), notice: "Collaborator is already a contributor to this project"
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:76:81: C: Line is too long. [108/80]
+        redirect_to project_url(project_id), notice: "Collaborator is already a contributor to this project"
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:78:9: C: Missing space after #.
+        #add user as a collaborator
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:83:54: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        redirect_to project_url(project_id), notice: "Collaborator added to project."
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:83:81: C: Line is too long. [85/80]
+        redirect_to project_url(project_id), notice: "Collaborator added to project."
+                                                                                ^^^^^
+app/controllers/collaborators_controller.rb:86:7: C: Missing space after #.
+      #user not found, redirect
+      ^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:87:52: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      redirect_to project_url(project_id), notice: "User was not found.  Collaborators must have an account to be added to the project."
+                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:87:81: C: Line is too long. [136/80]
+      redirect_to project_url(project_id), notice: "User was not found.  Collaborators must have an account to be added to the project."
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/collaborators_controller.rb:91:1: C: Extra blank line detected.
+app/controllers/collaborators_controller.rb:92:3: C: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/collaborators_controller.rb:98:81: C: Line is too long. [86/80]
+  # Never trust parameters from the scary internet, only allow the white list through.
+                                                                                ^^^^^^
+app/controllers/tasks_controller.rb:1:1: C: Missing top-level class documentation comment.
+class TasksController < ApplicationController
+^^^^^
+app/controllers/tasks_controller.rb:27:3: C: Assignment Branch Condition size for create is too high. [15.07/15]
+  def create
+  ^^^
+app/controllers/tasks_controller.rb:28:1: C: Extra empty line detected at method body beginning.
+app/controllers/tasks_controller.rb:29:81: C: Line is too long. [130/80]
+    # @task = Task.new(:user_id => session[:user_id], :project_id => params[:project_id])#, :description => params[:description] )
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/tasks_controller.rb:32:1: C: Extra blank line detected.
+app/controllers/tasks_controller.rb:35:9: C: Missing space after #.
+        #redirect to dashboard
+        ^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/tasks_controller.rb:37:9: C: Missing space after #.
+        #format.html { redirect_to controller: 'dashboard', action: 'show', id: session[:user_id] }
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/tasks_controller.rb:37:81: C: Line is too long. [99/80]
+        #format.html { redirect_to controller: 'dashboard', action: 'show', id: session[:user_id] }
+                                                                                ^^^^^^^^^^^^^^^^^^^
+app/controllers/tasks_controller.rb:51:81: C: Line is too long. [83/80]
+        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
+                                                                                ^^^
+app/controllers/tasks_controller.rb:66:81: C: Line is too long. [99/80]
+      format.html { redirect_to project_url(project_id), notice: 'Task was successfully deleted.' }
+                                                                                ^^^^^^^^^^^^^^^^^^^
+app/controllers/tasks_controller.rb:71:1: C: Extra blank line detected.
+app/controllers/tasks_controller.rb:72:1: C: Extra blank line detected.
+app/controllers/tasks_controller.rb:73:3: C: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/tasks_controller.rb:79:81: C: Line is too long. [86/80]
+  # Never trust parameters from the scary internet, only allow the white list through.
+                                                                                ^^^^^^
+app/controllers/home_controller.rb:1:1: C: Missing top-level class documentation comment.
+class HomeController < ApplicationController
+^^^^^
+app/controllers/home_controller.rb:2:1: C: Extra empty line detected at class body beginning.
+app/controllers/home_controller.rb:4:5: C: Use a guard clause instead of wrapping the code inside a conditional expression.
+    if current_user
+    ^^
+app/controllers/home_controller.rb:4:5: C: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if current_user
+    ^^
+app/controllers/home_controller.rb:8:1: C: Extra empty line detected at class body end.
+app/controllers/users_controller.rb:1:1: C: Missing top-level class documentation comment.
+class UsersController < ApplicationController
+^^^^^
+app/controllers/users_controller.rb:34:81: C: Line is too long. [83/80]
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+                                                                                ^^^
+app/controllers/users_controller.rb:48:81: C: Line is too long. [83/80]
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+                                                                                ^^^
+app/controllers/users_controller.rb:62:81: C: Line is too long. [87/80]
+      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+                                                                                ^^^^^^^
+app/controllers/users_controller.rb:67:3: C: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/users_controller.rb:73:81: C: Line is too long. [86/80]
+  # Never trust parameters from the scary internet, only allow the white list through.
+                                                                                ^^^^^^
+app/controllers/users_controller.rb:75:81: C: Line is too long. [119/80]
+    params.require(:user).permit(:name, :email, :password, :password_digest, :password_confirmation, :admin, :provider)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:1:1: C: Missing top-level class documentation comment.
+class ProjectsController < ApplicationController
+^^^^^
+app/controllers/projects_controller.rb:17:21: C: Space missing inside {.
+        format.csv {render text: Project.csv(@project)}
+                    ^
+app/controllers/projects_controller.rb:17:55: C: Space missing inside }.
+        format.csv {render text: Project.csv(@project)}
+                                                      ^
+app/controllers/projects_controller.rb:40:81: C: Line is too long. [89/80]
+        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+                                                                                ^^^^^^^^^
+app/controllers/projects_controller.rb:44:81: C: Line is too long. [83/80]
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+                                                                                ^^^
+app/controllers/projects_controller.rb:54:81: C: Line is too long. [89/80]
+        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+                                                                                ^^^^^^^^^
+app/controllers/projects_controller.rb:58:81: C: Line is too long. [83/80]
+        format.json { render json: @project.errors, status: :unprocessable_entity }
+                                                                                ^^^
+app/controllers/projects_controller.rb:64:5: C: Missing space after #.
+    #binding.pry
+    ^^^^^^^^^^^^
+app/controllers/projects_controller.rb:65:5: C: Missing space after #.
+    #Project.remove_collaborator(project_id, user_id)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:67:81: C: Line is too long. [101/80]
+    @collaboration = Collaborator.find_by(project_id: params[:project_id], user_id: params[:user_id])
+                                                                                ^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:77:81: C: Line is too long. [93/80]
+      format.html { redirect_to projects_url, notice: 'Project was successfully destroyed.' }
+                                                                                ^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:82:3: C: Missing space after #.
+  #check if current user is authorized to view the project.
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:83:3: C: Missing space after #.
+  #if not a project owner or collaborator, return false
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:84:3: C: Assignment Branch Condition size for authorized? is too high. [17.58/15]
+  def authorized?
+  ^^^
+app/controllers/projects_controller.rb:84:3: C: Method has too many lines. [22/10]
+  def authorized?
+  ^^^
+app/controllers/projects_controller.rb:85:5: C: Missing space after #.
+    #if current_user is nil, return false
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:86:5: C: Missing space after #.
+    #otherwise, check for authorization
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:90:7: C: Missing space after #.
+      #if user is admin, return true
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:94:9: C: Missing space after #.
+        #puts authorized user ids in an array and check against
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:95:9: C: Missing space after #.
+        #the current_user id
+        ^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:96:28: C: Use array literal [] instead of Array.new.
+        authorized_users = Array.new
+                           ^^^^^^^^^
+app/controllers/projects_controller.rb:104:11: C: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+          if current_user.id == user
+          ^^
+app/controllers/projects_controller.rb:108:9: C: Missing space after #.
+        #authorized user not found
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:109:9: C: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+        if !authorized
+        ^^
+app/controllers/projects_controller.rb:109:9: C: Favor unless over if for negative conditions.
+        if !authorized
+        ^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:114:7: C: Missing space after #.
+      #current_user is nil, return false
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/projects_controller.rb:119:3: C: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/projects_controller.rb:125:81: C: Line is too long. [86/80]
+  # Never trust parameters from the scary internet, only allow the white list through.
+                                                                                ^^^^^^
+app/controllers/projects_controller.rb:127:81: C: Line is too long. [97/80]
+    params.require(:project).permit(:name, :description, :completion_date, :user_id, :project_id)
+                                                                                ^^^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:1:1: C: Missing top-level class documentation comment.
+class SessionsController < ApplicationController
+^^^^^
+app/controllers/sessions_controller.rb:2:3: C: Missing space after #.
+  #skip_before_action :index
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:33:7: C: Missing space after #.
+      #render plain: @session.inspect
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:36:5: C: Use 2 (not 1) spaces for indentation.
+     redirect_to project_path(@session.project_id), notice: 'Session not saved.  Session time may overlap with another existing session in 
+    ^
+app/controllers/sessions_controller.rb:36:81: C: Line is too long. [139/80]
+     redirect_to project_path(@session.project_id), notice: 'Session not saved.  Session time may overlap with another existing session in 
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:36:139: C: Trailing whitespace detected.
+     redirect_to project_path(@session.project_id), notice: 'Session not saved.  Session time may overlap with another existing session in 
+                                                                                                                                          ^
+app/controllers/sessions_controller.rb:37:28: C: Trailing whitespace detected.
+     one of your projects.' 
+                           ^
+app/controllers/sessions_controller.rb:41:1: C: Extra blank line detected.
+app/controllers/sessions_controller.rb:47:81: C: Line is too long. [89/80]
+        format.html { redirect_to @session, notice: 'Session was successfully updated.' }
+                                                                                ^^^^^^^^^
+app/controllers/sessions_controller.rb:51:81: C: Line is too long. [83/80]
+        format.json { render json: @session.errors, status: :unprocessable_entity }
+                                                                                ^^^
+app/controllers/sessions_controller.rb:58:5: C: Inconsistent indentation detected.
+    def destroy
+    ^^^^^^^^^^^
+app/controllers/sessions_controller.rb:61:81: C: Line is too long. [95/80]
+        format.html { redirect_to sessions_url, notice: 'Session was successfully destroyed.' }
+                                                                                ^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:66:5: C: Inconsistent indentation detected.
+    def stop_time(session_id = nil)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:66:19: W: Unused method argument - session_id. If it's necessary, use _ or _session_id as an argument name to indicate that it won't be used. You can also write as stop_time(*) if you want the method to accept any arguments but don't care about them.
+    def stop_time(session_id = nil)
+                  ^^^^^^^^^^
+app/controllers/sessions_controller.rb:74:5: C: Indent access modifiers like private.
+    private
+    ^^^^^^^
+app/controllers/sessions_controller.rb:74:5: C: Keep a blank line before and after private.
+    private
+    ^^^^^^^
+app/controllers/sessions_controller.rb:76:5: C: Inconsistent indentation detected.
+    def set_session
+    ^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:80:81: C: Line is too long. [88/80]
+    # Never trust parameters from the scary internet, only allow the white list through.
+                                                                                ^^^^^^^^
+app/controllers/sessions_controller.rb:81:5: C: Inconsistent indentation detected.
+    def session_params
+    ^^^^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:82:81: C: Line is too long. [103/80]
+      params.require(:session).permit(:project_id, :start_time, :end_time, :task_id, :active, :user_id)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/sessions_controller.rb:84:1: C: Extra empty line detected at class body end.
+app/controllers/sessions_controller.rb:85:3: W: end at 85, 2 is not aligned with class at 1, 0
+  end
+  ^^^
+app/controllers/admin_controller.rb:1:1: C: Missing top-level class documentation comment.
+class AdminController < ApplicationController
+^^^^^
+app/controllers/admin_controller.rb:2:1: C: Extra empty line detected at class body beginning.
+app/controllers/admin_controller.rb:12:1: C: Extra empty line detected at method body beginning.
+app/controllers/admin_controller.rb:15:3: C: Assignment Branch Condition size for authenticate is too high. [24.35/15]
+  def authenticate
+  ^^^
+app/controllers/admin_controller.rb:15:3: C: Method has too many lines. [12/10]
+  def authenticate
+  ^^^
+app/controllers/admin_controller.rb:16:5: C: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if session[:admin] == true
+    ^^
+app/controllers/admin_controller.rb:26:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      flash.now.alert = "Email or password is invalid"
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/admin_controller.rb:27:21: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      render plain: "Login failed"
+                    ^^^^^^^^^^^^^^
+app/controllers/admin_controller.rb:30:1: C: Extra empty line detected at class body end.
+app/controllers/application_controller.rb:1:1: C: Missing top-level class documentation comment.
+class ApplicationController < ActionController::Base
+^^^^^
+app/controllers/application_controller.rb:7:3: C: Keep a blank line before and after private.
+  private
+  ^^^^^^^
+app/controllers/application_controller.rb:9:3: C: Missing space after #.
+  #set and return current user
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:12:22: C: Prefer !expression.nil? over expression != nil.
+    if @current_user != nil
+                     ^^
+app/controllers/application_controller.rb:13:7: C: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+      if @current_user.admin == true
+      ^^
+app/controllers/application_controller.rb:21:3: C: Missing space after #.
+  #redirect to home if user is not an admin
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:23:5: C: Use a guard clause instead of wrapping the code inside a conditional expression.
+    if session[:admin] == true
+    ^^
+app/controllers/application_controller.rb:30:3: C: Missing space after #.
+  #if not the current user or admin, deny access and redirect
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:32:4: C: Incorrect indentation detected (column 3 instead of 4).
+   #binding.pry
+   ^^^^^^^^^^^^
+app/controllers/application_controller.rb:32:4: C: Missing space after #.
+   #binding.pry
+   ^^^^^^^^^^^^
+app/controllers/application_controller.rb:43:3: C: Missing space after #.
+  #if user is not logged in, direct them to login
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/application_controller.rb:45:5: C: Use a guard clause instead of wrapping the code inside a conditional expression.
+    if current_user == nil
+    ^^
+app/controllers/application_controller.rb:45:5: C: Favor modifier if usage when having a single-line body. Another good alternative is the usage of control flow &&/||.
+    if current_user == nil
+    ^^
+app/controllers/application_controller.rb:45:21: C: Prefer the use of the nil? predicate.
+    if current_user == nil
+                    ^^
+app/controllers/application_controller.rb:49:1: C: Extra empty line detected at class body end.
+app/controllers/dashboard_controller.rb:1:1: C: Missing top-level class documentation comment.
+class DashboardController < ApplicationController
+^^^^^
+app/controllers/dashboard_controller.rb:4:3: C: Missing space after #.
+  #show.html.erb
+  ^^^^^^^^^^^^^^
+app/controllers/dashboard_controller.rb:9:6: C: Incorrect indentation detected (column 5 instead of 4).
+     #binding.pry
+     ^^^^^^^^^^^^
+app/controllers/dashboard_controller.rb:9:6: C: Missing space after #.
+     #binding.pry
+     ^^^^^^^^^^^^
+app/controllers/dashboard_controller.rb:10:5: C: Use a guard clause instead of wrapping the code inside a conditional expression.
+    if @current_user.id != params[:id].to_i
+    ^^
+app/controllers/dashboard_controller.rb:12:5: C: Redundant empty else-clause.
+    else
+    ^^^^
+app/controllers/dashboard_controller.rb:17:5: C: Missing space after #.
+    #session[:project_id] = params[:id]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/dashboard_controller.rb:19:5: C: Missing space after #.
+    #redirect to new task page with project_id in params
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/dashboard_controller.rb:20:31: C: Space inside parentheses detected.
+    redirect_to new_task_path( :project_id => params[:id])
+                              ^
+app/controllers/dashboard_controller.rb:20:32: C: Use the new Ruby 1.9 hash syntax.
+    redirect_to new_task_path( :project_id => params[:id])
+                               ^^^^^^^^^^^^^^
+app/controllers/dashboard_controller.rb:25:7: C: Do not prefix reader method names with get_.
+  def get_projects
+      ^^^^^^^^^^^^
+app/controllers/dashboard_controller.rb:26:31: C: Use the new Ruby 1.9 hash syntax.
+    @projects = Project.where(:user_id => params[:id])
+                              ^^^^^^^^^^^
+app/controllers/dashboard_controller.rb:28:1: C: Extra empty line detected at class body end.
+app/controllers/authentication_controller.rb:1:1: C: Missing top-level class documentation comment.
+class AuthenticationController < ApplicationController
+^^^^^
+app/controllers/authentication_controller.rb:2:1: C: Extra empty line detected at class body beginning.
+app/controllers/authentication_controller.rb:3:3: C: Assignment Branch Condition size for create is too high. [24.37/15]
+  def create
+  ^^^
+app/controllers/authentication_controller.rb:3:3: C: Method has too many lines. [13/10]
+  def create
+  ^^^
+app/controllers/authentication_controller.rb:4:24: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    auth = request.env["omniauth.auth"]
+                       ^^^^^^^^^^^^^^^
+app/controllers/authentication_controller.rb:5:5: C: Missing space after #.
+    #binding.pry
+    ^^^^^^^^^^^^
+app/controllers/authentication_controller.rb:7:51: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      user = User.find_by_provider_and_email(auth["provider"], auth["info"]["email"]) || User.create_with_omniauth(auth)
+                                                  ^^^^^^^^^^
+app/controllers/authentication_controller.rb:7:69: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      user = User.find_by_provider_and_email(auth["provider"], auth["info"]["email"]) || User.create_with_omniauth(auth)
+                                                                    ^^^^^^
+app/controllers/authentication_controller.rb:7:77: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      user = User.find_by_provider_and_email(auth["provider"], auth["info"]["email"]) || User.create_with_omniauth(auth)
+                                                                            ^^^^^^^
+app/controllers/authentication_controller.rb:7:81: C: Line is too long. [120/80]
+      user = User.find_by_provider_and_email(auth["provider"], auth["info"]["email"]) || User.create_with_omniauth(auth)
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/authentication_controller.rb:9:7: C: Missing space after #.
+      #check if user is admin
+      ^^^^^^^^^^^^^^^^^^^^^^^
+app/controllers/authentication_controller.rb:11:7: C: Use 2 (not 1) spaces for indentation.
+      	session[:admin] = true
+      ^
+app/controllers/authentication_controller.rb:11:7: C: Tab detected.
+      	session[:admin] = true
+      ^
+app/controllers/authentication_controller.rb:13:7: C: Use 2 (not 1) spaces for indentation.
+      	session[:admin] = false
+      ^
+app/controllers/authentication_controller.rb:13:7: C: Tab detected.
+      	session[:admin] = false
+      ^
+app/controllers/authentication_controller.rb:15:54: C: Use the new Ruby 1.9 hash syntax.
+      redirect_to dashboard_path(session[:user_id]), :notice => "Signed in!"
+                                                     ^^^^^^^^^^
+app/controllers/authentication_controller.rb:15:65: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      redirect_to dashboard_path(session[:user_id]), :notice => "Signed in!"
+                                                                ^^^^^^^^^^^^
+app/controllers/authentication_controller.rb:16:7: C: Missing space after #.
+      #binding.pry
+      ^^^^^^^^^^^^
+app/controllers/authentication_controller.rb:17:5: W: Avoid rescuing the Exception class. Perhaps you meant to rescue StandardError?
+    rescue Exception => e
+    ^^^^^^^^^^^^^^^^^^^^^
+app/controllers/authentication_controller.rb:18:29: C: Use the new Ruby 1.9 hash syntax.
+      redirect_to root_url, :notice => e.to_s
+                            ^^^^^^^^^^
+app/controllers/authentication_controller.rb:20:1: C: Extra empty line detected at method body end.
+app/controllers/authentication_controller.rb:27:27: C: Use the new Ruby 1.9 hash syntax.
+    redirect_to root_url, :notice => "Signed out!"
+                          ^^^^^^^^^^
+app/controllers/authentication_controller.rb:27:38: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    redirect_to root_url, :notice => "Signed out!"
+                                     ^^^^^^^^^^^^^
+app/controllers/authentication_controller.rb:29:1: C: Extra empty line detected at class body end.
+app/helpers/application_helper.rb:1:1: C: Missing top-level module documentation comment.
+module ApplicationHelper
+^^^^^^
+app/helpers/authentication_helper.rb:1:1: C: Missing top-level module documentation comment.
+module AuthenticationHelper
+^^^^^^
+app/helpers/users_helper.rb:1:1: C: Missing top-level module documentation comment.
+module UsersHelper
+^^^^^^
+app/helpers/projects_helper.rb:1:1: C: Missing top-level module documentation comment.
+module ProjectsHelper
+^^^^^^
+app/helpers/collaborators_helper.rb:1:1: C: Missing top-level module documentation comment.
+module CollaboratorsHelper
+^^^^^^
+app/helpers/admin_helper.rb:1:1: C: Missing top-level module documentation comment.
+module AdminHelper
+^^^^^^
+app/helpers/home_helper.rb:1:1: C: Missing top-level module documentation comment.
+module HomeHelper
+^^^^^^
+app/helpers/tasks_helper.rb:1:1: C: Missing top-level module documentation comment.
+module TasksHelper
+^^^^^^
+app/helpers/dashboard_helper.rb:1:1: C: Missing top-level module documentation comment.
+module DashboardHelper
+^^^^^^
+app/helpers/sessions_helper.rb:1:1: C: Missing top-level module documentation comment.
+module SessionsHelper
+^^^^^^
+app/views/sessions/show.json.jbuilder:1:81: C: Line is too long. [100/80]
+json.extract! @session, :id, :project_id, :start_time, :end_time, :task_id, :created_at, :updated_at
+                                                                                ^^^^^^^^^^^^^^^^^^^^
+app/views/projects/show.json.jbuilder:1:81: C: Line is too long. [102/80]
+json.extract! @project, :id, :name, :description, :completion_date, :user_id, :created_at, :updated_at
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^
+app/views/collaborators/show.json.jbuilder:1:81: C: Line is too long. [81/80]
+json.extract! @collaborator, :id, :user_id, :project_id, :created_at, :updated_at
+                                                                                ^
+app/views/users/show.json.jbuilder:1:81: C: Line is too long. [84/80]
+json.extract! @user, :id, :name, :email, :password, :admin, :created_at, :updated_at
+                                                                                ^^^^
+app/models/project.rb:1:1: C: Missing top-level class documentation comment.
+class Project < ActiveRecord::Base
+^^^^^
+app/models/project.rb:8:1: C: Extra blank line detected.
+app/models/project.rb:9:3: C: Missing space after #.
+  #get active session for project
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:10:3: C: Missing space after #.
+  #returns a hash of session_id and task_id
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:11:3: C: Method has too many lines. [11/10]
+  def self.active_session(project_id)
+  ^^^
+app/models/project.rb:15:14: C: Use hash literal {} instead of Hash.new.
+    result = Hash.new
+             ^^^^^^^^
+app/models/project.rb:20:7: C: Redundant empty else-clause.
+      else
+      ^^^^
+app/models/project.rb:27:3: C: Missing space after #.
+  #return boolean indicating whether project has been completed
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:38:3: C: Missing space after #.
+  #return project collaborators
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:44:3: C: Missing space after #.
+  #return projects that a specific user collaborates on
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:49:3: C: Missing space after #.
+  #total time spent on the project, returns a hash of minutes and hours
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:50:3: C: Assignment Branch Condition size for total_time is too high. [25.92/15]
+  def self.total_time(project_id)
+  ^^^
+app/models/project.rb:50:3: C: Method has too many lines. [24/10]
+  def self.total_time(project_id)
+  ^^^
+app/models/project.rb:56:29: C: Prefer !expression.nil? over expression != nil.
+      if session.start_time != nil && session.end_time != nil
+                            ^^
+app/models/project.rb:56:56: C: Prefer !expression.nil? over expression != nil.
+      if session.start_time != nil && session.end_time != nil
+                                                       ^^
+app/models/project.rb:62:1: C: Extra blank line detected.
+app/models/project.rb:63:5: C: Missing space after #.
+    #if less than an hours spent, pass back minutes and zero hours
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:66:7: C: Missing space after #.
+      #round up to closest minute
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:69:7: C: Missing space after #.
+      #divmod returns the quotient and the remainder to get the hours and minutes
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:69:81: C: Line is too long. [81/80]
+      #divmod returns the quotient and the remainder to get the hours and minutes
+                                                                                ^
+app/models/project.rb:70:21: C: Surrounding space missing for operator '='.
+      hours, minutes= total.divmod(60)
+                    ^
+app/models/project.rb:71:7: C: Missing space after #.
+      #round the minutes
+      ^^^^^^^^^^^^^^^^^^
+app/models/project.rb:74:7: C: Missing space after #.
+      #if minutes are rounded up to 60 total, increment hours and set minutes to zero
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:74:81: C: Line is too long. [85/80]
+      #if minutes are rounded up to 60 total, increment hours and set minutes to zero
+                                                                                ^^^^^
+app/models/project.rb:81:5: C: Missing space after #.
+    #create and return hash of hours and minutes
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:82:14: C: Use hash literal {} instead of Hash.new.
+    result = Hash.new
+             ^^^^^^^^
+app/models/project.rb:85:5: C: Missing space after #.
+    #return result
+    ^^^^^^^^^^^^^^
+app/models/project.rb:89:3: C: Missing space after #.
+  #output project object as csv data
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:90:3: C: Assignment Branch Condition size for csv is too high. [18.11/15]
+  def self.csv(project)
+  ^^^
+app/models/project.rb:90:3: C: Method has too many lines. [12/10]
+  def self.csv(project)
+  ^^^
+app/models/project.rb:92:19: C: Redundant self detected.
+    @total_time = self.total_time(project.id)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:97:15: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      csv << ["Work Sessions"]
+              ^^^^^^^^^^^^^^^
+app/models/project.rb:99:45: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        csv << session.attributes.values_at("start_time", "end_time")
+                                            ^^^^^^^^^^^^
+app/models/project.rb:99:59: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        csv << session.attributes.values_at("start_time", "end_time")
+                                                          ^^^^^^^^^^
+app/models/project.rb:102:14: C: Use %w or %W for array of words.
+      csv << ["Hours", "Minutes"]
+             ^^^^^^^^^^^^^^^^^^^^
+app/models/project.rb:102:15: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      csv << ["Hours", "Minutes"]
+              ^^^^^^^
+app/models/project.rb:102:24: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+      csv << ["Hours", "Minutes"]
+                       ^^^^^^^^^
+app/models/project.rb:106:1: C: Extra empty line detected at class body end.
+app/models/session.rb:1:1: C: Missing top-level class documentation comment.
+class Session < ActiveRecord::Base
+^^^^^
+app/models/session.rb:6:46: C: Space inside { missing.
+  validates :start_time, :end_time, overlap: {notice: "overlapping" , scope: 'user_id'}
+                                             ^
+app/models/session.rb:6:55: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  validates :start_time, :end_time, overlap: {notice: "overlapping" , scope: 'user_id'}
+                                                      ^^^^^^^^^^^^^
+app/models/session.rb:6:68: C: Space found before comma.
+  validates :start_time, :end_time, overlap: {notice: "overlapping" , scope: 'user_id'}
+                                                                   ^
+app/models/session.rb:6:81: C: Line is too long. [87/80]
+  validates :start_time, :end_time, overlap: {notice: "overlapping" , scope: 'user_id'}
+                                                                                ^^^^^^^
+app/models/session.rb:6:87: C: Space inside } missing.
+  validates :start_time, :end_time, overlap: {notice: "overlapping" , scope: 'user_id'}
+                                                                                      ^
+app/models/session.rb:7:1: C: Extra empty line detected at class body end.
+app/models/user.rb:1:1: C: Missing top-level class documentation comment.
+class User < ActiveRecord::Base
+^^^^^
+app/models/user.rb:11:1: C: Extra blank line detected.
+app/models/user.rb:12:3: C: Missing space after #.
+  #create user with credentials supplied by oauth
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:13:3: C: Assignment Branch Condition size for create_with_omniauth is too high. [30.07/15]
+  def self.create_with_omniauth(auth)
+  ^^^
+app/models/user.rb:13:3: C: Method has too many lines. [19/10]
+  def self.create_with_omniauth(auth)
+  ^^^
+app/models/user.rb:14:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    if auth["provider"] == 'github'
+            ^^^^^^^^^^
+app/models/user.rb:16:30: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.provider = auth["provider"]
+                             ^^^^^^^^^^
+app/models/user.rb:17:9: C: Missing space after #.
+        #user.uid = auth["uid"]
+        ^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:18:26: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.name = auth["info"]["nickname"]
+                         ^^^^^^
+app/models/user.rb:18:34: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.name = auth["info"]["nickname"]
+                                 ^^^^^^^^^^
+app/models/user.rb:19:30: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.password = auth["uid"]
+                             ^^^^^
+app/models/user.rb:20:27: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.email = auth["info"]["email"]
+                          ^^^^^^
+app/models/user.rb:20:35: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.email = auth["info"]["email"]
+                                  ^^^^^^^
+app/models/user.rb:27:30: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.provider = auth["provider"]
+                             ^^^^^^^^^^
+app/models/user.rb:28:9: C: Missing space after #.
+        #user.uid = auth["uid"]
+        ^^^^^^^^^^^^^^^^^^^^^^^
+app/models/user.rb:29:26: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.name = auth["info"]["name"]
+                         ^^^^^^
+app/models/user.rb:29:34: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.name = auth["info"]["name"]
+                                 ^^^^^^
+app/models/user.rb:30:30: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.password = auth["uid"]
+                             ^^^^^
+app/models/user.rb:31:27: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.email = auth["info"]["email"]
+                          ^^^^^^
+app/models/user.rb:31:35: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+        user.email = auth["info"]["email"]
+                                  ^^^^^^^
+app/models/user.rb:37:1: C: Extra empty line detected at class body end.
+app/models/collaborator.rb:1:1: C: Missing top-level class documentation comment.
+class Collaborator < ActiveRecord::Base
+^^^^^
+app/models/task.rb:1:1: C: Missing top-level class documentation comment.
+class Task < ActiveRecord::Base
+^^^^^
+app/models/task.rb:6:3: C: Missing space after #.
+  #return the total amount of time spent on the task
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/task.rb:7:3: C: Missing space after #.
+  #returns a hash of hours and minutes
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/task.rb:8:3: C: Assignment Branch Condition size for total_time is too high. [25.92/15]
+  def self.total_time(task_id)
+  ^^^
+app/models/task.rb:8:3: C: Method has too many lines. [24/10]
+  def self.total_time(task_id)
+  ^^^
+app/models/task.rb:15:26: C: Prefer !expression.nil? over expression != nil.
+      if task.start_time != nil && task.end_time != nil
+                         ^^
+app/models/task.rb:15:50: C: Prefer !expression.nil? over expression != nil.
+      if task.start_time != nil && task.end_time != nil
+                                                 ^^
+app/models/task.rb:21:5: C: Missing space after #.
+    #if less than an hours spent, pass back minutes and zero hours
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/task.rb:24:7: C: Missing space after #.
+      #round up to closest minute
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/task.rb:27:7: C: Missing space after #.
+      #divmod returns the quotient and the remainder to get the hours and minutes
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/task.rb:27:81: C: Line is too long. [81/80]
+      #divmod returns the quotient and the remainder to get the hours and minutes
+                                                                                ^
+app/models/task.rb:28:21: C: Surrounding space missing for operator '='.
+      hours, minutes= total.divmod(60)
+                    ^
+app/models/task.rb:29:7: C: Missing space after #.
+      #round the minutes
+      ^^^^^^^^^^^^^^^^^^
+app/models/task.rb:33:5: C: Missing space after #.
+    #if minutes are rounded up to 60 total, increment hours and set minutes to zero
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/task.rb:33:81: C: Line is too long. [83/80]
+    #if minutes are rounded up to 60 total, increment hours and set minutes to zero
+                                                                                ^^^
+app/models/task.rb:39:5: C: Missing space after #.
+    #create and return hash of hours and minutes
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/task.rb:40:14: C: Use hash literal {} instead of Hash.new.
+    result = Hash.new
+             ^^^^^^^^
+app/models/task.rb:44:1: C: Extra blank line detected.
+app/models/task.rb:45:5: C: Missing space after #.
+    #return result
+    ^^^^^^^^^^^^^^
+app/models/task.rb:49:3: C: Missing space after #.
+  #return the sessions for the task
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/task.rb:55:3: C: Missing space after #.
+  #return the tasks for a given project
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+app/models/task.rb:57:25: C: Use the new Ruby 1.9 hash syntax.
+    @tasks = Task.where(:project_id => project_id)
+                        ^^^^^^^^^^^^^^
+app/models/task.rb:60:1: C: Extra blank line detected.
+app/models/task.rb:60:1: C: Extra empty line detected at class body end.
+bin/rake:3:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  load File.expand_path("../spring", __FILE__)
+                        ^^^^^^^^^^^
+bin/rake:4:1: W: Do not suppress exceptions.
+rescue LoadError
+^^^^^^^^^^^^^^^^
+bin/spring:7:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  require "rubygems"
+          ^^^^^^^^^^
+bin/spring:8:11: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  require "bundler"
+          ^^^^^^^^^
+bin/spring:10:12: W: Assignment in condition - you probably meant to use ==.
+  if match = Bundler.default_lockfile.read.match(/^GEM$.*?^    (?:  )*spring \((.*?)\)$.*?^$/m)
+           ^
+bin/spring:10:81: C: Line is too long. [95/80]
+  if match = Bundler.default_lockfile.read.match(/^GEM$.*?^    (?:  )*spring \((.*?)\)$.*?^$/m)
+                                                                                ^^^^^^^^^^^^^^^
+bin/spring:11:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    ENV["GEM_PATH"] = ([Bundler.bundle_path.to_s] + Gem.path).join(File::PATH_SEPARATOR)
+        ^^^^^^^^^^
+bin/spring:11:81: C: Line is too long. [88/80]
+    ENV["GEM_PATH"] = ([Bundler.bundle_path.to_s] + Gem.path).join(File::PATH_SEPARATOR)
+                                                                                ^^^^^^^^
+bin/spring:12:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    ENV["GEM_HOME"] = ""
+        ^^^^^^^^^^
+bin/spring:12:23: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    ENV["GEM_HOME"] = ""
+                      ^^
+bin/spring:15:9: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    gem "spring", match[1]
+        ^^^^^^^^
+bin/spring:16:13: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+    require "spring/binstub"
+            ^^^^^^^^^^^^^^^^
+bin/rails:3:25: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  load File.expand_path("../spring", __FILE__)
+                        ^^^^^^^^^^^
+bin/rails:4:1: W: Do not suppress exceptions.
+rescue LoadError
+^^^^^^^^^^^^^^^^
+config/routes.rb:12:12: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  root to: "home#index"
+           ^^^^^^^^^^^^
+config/routes.rb:14:31: C: Use the new Ruby 1.9 hash syntax.
+  get 'authentication/login', :as => :login
+                              ^^^^^^
+config/routes.rb:15:7: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  get "/auth/:provider/callback/" => "authentication#create"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:15:38: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  get "/auth/:provider/callback/" => "authentication#create"
+                                     ^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:16:7: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  get "/auth/:provider/" => "authentication#create"
+      ^^^^^^^^^^^^^^^^^^
+config/routes.rb:16:29: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  get "/auth/:provider/" => "authentication#create"
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:17:7: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  get "/signout" => "authentication#destroy", :as => :signout
+      ^^^^^^^^^^
+config/routes.rb:17:21: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  get "/signout" => "authentication#destroy", :as => :signout
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:22:3: C: Missing space after #.
+  #get 'start_session' => 'sessions#start_session'
+  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:27:75: C: Trailing whitespace detected.
+  get 'projects/:id/remove_collaborator' => 'projects#remove_collaborator' 
+                                                                          ^
+config/routes.rb:29:6: W: Put space between the method name and the first argument.
+  get'add_collaborator' => 'collaborators#add_collaborator'
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/routes.rb:35:1: C: Extra blank line detected.
+config/routes.rb:36:81: C: Line is too long. [84/80]
+  # The priority is based upon order of creation: first created -> highest priority.
+                                                                                ^^^^
+config/routes.rb:48:81: C: Line is too long. [81/80]
+  # Example resource route (maps HTTP verbs to controller actions automatically):
+                                                                                ^
+config/initializers/session_store.rb:3:81: C: Line is too long. [85/80]
+Rails.application.config.session_store :cookie_store, key: '_project_tracker_session'
+                                                                                ^^^^^
+config/initializers/omniauth.rb:3:32: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], {
+                               ^^^^^^^^^^^^^^^^^^
+config/initializers/omniauth.rb:3:57: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], {
+                                                        ^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/omniauth.rb:3:81: C: Line is too long. [82/80]
+  provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], {
+                                                                                ^^
+config/initializers/omniauth.rb:3:82: C: Redundant curly braces around a hash parameter.
+  provider :google_oauth2, ENV["GOOGLE_CLIENT_ID"], ENV["GOOGLE_CLIENT_SECRET"], {
+                                                                                 ^
+config/initializers/omniauth.rb:4:5: C: Use the new Ruby 1.9 hash syntax.
+    :scope => 'email,profile'
+    ^^^^^^^^^
+config/initializers/omniauth.rb:7:69: C: Prefer single-quoted strings when you don't need string interpolation or special symbols.
+  provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: "user:email", provider_ignores_state: :true #access_type: 'offline' #scope: "user:email,user:follow"
+                                                                    ^^^^^^^^^^^^
+config/initializers/omniauth.rb:7:81: C: Line is too long. [168/80]
+  provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: "user:email", provider_ignores_state: :true #access_type: 'offline' #scope: "user:email,user:follow"
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/omniauth.rb:7:113: C: Missing space after #.
+  provider :github, ENV['GITHUB_KEY'], ENV['GITHUB_SECRET'], scope: "user:email", provider_ignores_state: :true #access_type: 'offline' #scope: "user:email,user:follow"
+                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:3:81: C: Line is too long. [107/80]
+# You can add backtrace silencers for libraries that you're using but don't wish to see in your backtraces.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/backtrace_silencers.rb:6:81: C: Line is too long. [112/80]
+# You can also remove all the silencers if you're trying to debug a problem that might stem from framework code.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+config/initializers/wrap_parameters.rb:6:81: C: Line is too long. [96/80]
+# Enable parameter wrapping for JSON. You can disable this by setting :format to an empty array.
+                                                                                ^^^^^^^^^^^^^^^^
+config/initializers/cookies_serializer.rb:3:68: C: Final newline missing.
+Rails.application.config.action_dispatch.cookies_serializer = :json
+                                                                   
+config/application.rb:12:81: C: Line is too long. [82/80]
+    # Settings in config/environments/* take precedence over those specified here.
+                                                                                ^^
+config/application.rb:16:81: C: Line is too long. [99/80]
+    # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
+                                                                                ^^^^^^^^^^^^^^^^^^^
+config/application.rb:17:81: C: Line is too long. [89/80]
+    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
+                                                                                ^^^^^^^^^
+config/application.rb:20:81: C: Line is too long. [98/80]
+    # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
+                                                                                ^^^^^^^^^^^^^^^^^^
+config/application.rb:21:81: C: Line is too long. [87/80]
+    # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
+                                                                                ^^^^^^^
+config/environments/production.rb:2:81: C: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/production.rb:19:81: C: Line is too long. [104/80]
+  # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
+                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+config/environments/production.rb:42:81: C: Line is too long. [96/80]
+  # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
+                                                                                ^^^^^^^^^^^^^^^^
+config/environments/production.rb:61:81: C: Line is too long. [95/80]
+  # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
+                                                                                ^^^^^^^^^^^^^^^
+config/environments/production.rb:65:81: C: Line is too long. [100/80]
+  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
+                                                                                ^^^^^^^^^^^^^^^^^^^^
+config/environments/test.rb:2:81: C: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/environments/development.rb:2:81: C: Line is too long. [85/80]
+  # Settings specified here will take precedence over those in config/application.rb.
+                                                                                ^^^^^
+config/init.rb:1:19: C: Final newline missing.
+require 'tracking'
+                  
+lib/tracking.rb:1:1: C: Missing top-level class documentation comment.
+class Tracking
+^^^^^
+lib/tracking.rb:2:1: C: Extra empty line detected at class body beginning.
+lib/tracking.rb:3:1: C: Use 2 (not 0) spaces for indentation.
+def self.time_difference(start_time, end_time)
+
+lib/tracking.rb:4:1: C: Use 2 (not 1) spaces for indentation.
+	@difference = start_time - end_time
+^
+lib/tracking.rb:4:1: C: Tab detected.
+	@difference = start_time - end_time
+^
+lib/tracking.rb:5:1: C: Tab detected.
+lib/tracking.rb:5:1: C: Trailing whitespace detected.
+lib/tracking.rb:8:10: C: Do not prefix reader method names with get_.
+def self.get_time
+         ^^^^^^^^
+lib/tracking.rb:9:1: C: Use 2 (not 1) spaces for indentation.
+	Time.now
+^
+lib/tracking.rb:9:1: C: Tab detected.
+	Time.now
+^
+lib/tracking.rb:11:1: C: Extra empty line detected at class body end.
+lib/tracking.rb:12:4: C: Final newline missing.
+end
+   
+
+91 files inspected, 630 offenses detected
