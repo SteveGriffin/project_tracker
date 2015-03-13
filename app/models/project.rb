@@ -86,12 +86,13 @@ class Project < ActiveRecord::Base
     result
   end
 
-  #output project object as csv data
-  def self.csv(project)
+  #export project object as csv data
+  #takes project object and an options has as parameters
+  def self.csv(project, options = {})
     @sessions = project.sessions
     @total_time = self.total_time(project.id)
 
-    CSV.generate do |csv|
+    CSV.generate(options) do |csv|
       csv << column_names
       csv << project.attributes.values_at(*column_names)
       csv << ["Work Sessions"]
@@ -101,7 +102,13 @@ class Project < ActiveRecord::Base
 
       csv << ["Hours", "Minutes"]
       csv << @total_time.values
+
+      "ASDFASDFASDF"
     end
+  end
+
+  #export project object as an excel file
+  def self.excel(project)
   end
 
 end

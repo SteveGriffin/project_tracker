@@ -29,6 +29,8 @@
 		 		<b>Total Overall Time For Project: <%=  @project_time[:hours]  %> Hours <%= @project_time[:minutes] %> Minutes </b>
 	 		 				<br />
 	 		 				<%= link_to "Export to CSV", project_path(project.id, format: :csv) %>
+	 		 				<br />
+	 		 				<%= link_to "Export to Excel", project_path(project.id, format: :xls) %>
 	 		 				<br >
 	 			 	Project Status: <% @status = Project.complete?(project.id) %>
 						 	<% if @status == true %>

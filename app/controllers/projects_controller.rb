@@ -11,12 +11,17 @@ class ProjectsController < ApplicationController
   # GET /projects/1
   # GET /projects/1.json
   def show
+
     if authorized?
       respond_to do |format|
         format.html
-        format.csv {render text: Project.csv(@project)}
+        #respond to .csv format
+        format.csv {send_data Project.csv(@project)}#{render text: Project.csv(@project)}
+        #respond to xls format
+        format.xls {send_data Project.csv(@project, col_sep: "\t") }
       end
     else
+      binding.pry
       redirect_to root_url
     end
   end
@@ -89,7 +94,7 @@ class ProjectsController < ApplicationController
 
       #if user is admin, return true
       if session[:admin] == true
-        true
+        authorized = true
       else
         #puts authorized user ids in an array and check against
         #the current_user id
@@ -101,8 +106,9 @@ class ProjectsController < ApplicationController
         end
 
         authorized_users.each do |user|
+          # binding.pry
           if current_user.id == user
-            authorized == true
+            authorized = true
           end
         end
         #authorized user not found
@@ -110,6 +116,9 @@ class ProjectsController < ApplicationController
           false
         end
       end
+
+      #return result
+      authorized
     else
       #current_user is nil, return false
       false
